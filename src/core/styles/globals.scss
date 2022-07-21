@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Rubik', -apple-system, Roboto, sans-serif;
+    background-color: #F9FBFC;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+:root {
+    // Colors
+    --surface: #EEF2F5;
+    --background: white;
+    --contrast: #175FFB;
+    --primary: #0B0E31;
+    --secondary: #39465E;
+    --hint: #798A9D;
+    --light-contrast: #D6E4FF;
+    --disabled: #EEF2F6;
+    --border: #D5DBE2;
+    --placeholder: #CCD5DE;
+    
+    // Border
+    --surface-border: 1.5px solid var(--surface);
+}
