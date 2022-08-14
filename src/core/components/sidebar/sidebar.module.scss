@@ -96,6 +96,20 @@
                     color: rgba(255, 255, 255, 0.9);
                 }
             }
+
+            &[data-active=true] {
+                .icon {
+                    background-color: var(--surface);
+
+                    svg {
+                        color: var(--contrast);
+                    }
+                }
+
+                span.text {
+                    color: var(--contrast);
+                }
+            }
         }
 
         :last-child {
@@ -139,7 +153,7 @@
         }
 
         .items .item {
-            &:hover .icon {
+            &:hover:not(&[data-active=true]) .icon {
                 background: none;
                 transform: translateX(3px);
             }
