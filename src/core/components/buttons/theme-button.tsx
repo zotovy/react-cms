@@ -6,7 +6,7 @@ import { Button, useColorMode } from "@chakra-ui/react";
 export const ThemeButton: React.FC = () => {
     const {colorMode, toggleColorMode} = useColorMode()
 
-    return <Button variant="ghost" className={styles.themeButton} onClick={toggleColorMode}>
+    return <Button variant="ghost" className={ styles.themeButton } onClick={ toggleColorMode }>
         {
             colorMode === "light"
                 ? <Moon color="var(--hint)"/>

@@ -1,15 +1,15 @@
 import React from "react";
 import styles from "./sidebar.module.scss";
 import { NavPage, SidebarConfig } from "@core/types/layout";
-import { Divider, Spacer, Tooltip, useBoolean, useColorMode } from '@chakra-ui/react'
+import { Divider, Spacer, Tooltip, useColorMode } from '@chakra-ui/react'
 import { Link } from "react-router-dom";
 import { ChevronRight } from "react-feather";
 import classNames from "classnames";
 import { useActiveTab } from "@core/hooks/use-active-tab";
-
+import { useSidebar } from "@core/hooks/use-sidebar";
 
 export const Sidebar: React.FC<SidebarConfig> = React.memo((props) => {
-    const [open, setOpen] = useBoolean(false)
+    const { isSidebarOpened: open, toggleSidebar: toggle } = useSidebar()
     const {colorMode} = useColorMode()
 
     return <div className={ classNames(styles.sidebar, {[styles.open]: open}) } data-dark={ colorMode === "dark" }>
@@ -29,7 +29,7 @@ export const Sidebar: React.FC<SidebarConfig> = React.memo((props) => {
             }
         </div>
         <Spacer/>
-        <div className={ styles.bottom } onClick={ setOpen.toggle }>
+        <div className={ styles.bottom } onClick={ toggle }>
             <ChevronRight size={ 28 }/>
         </div>
     </div>
