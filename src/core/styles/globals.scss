@@ -12,26 +12,44 @@ html {
 
 body {
     font-family: 'Rubik', -apple-system, Roboto, sans-serif;
-    background-color: #F9FBFC;
+
+    &.chakra-ui-light {
+        // Colors
+        --surface: #EEF2F5;
+        --background: white;
+        --contrast: #175FFB;
+        --primary: #0B0E31;
+        --secondary: #39465E;
+        --hint: #798A9D;
+        --light-contrast: #D6E4FF;
+        --disabled: #EEF2F6;
+        --border: #D5DBE2;
+        --placeholder: #CCD5DE;
+        --chakra-colors-chakra-body-bg: #F9FBFC;
+
+        // Border
+        --surface-border: 1.5px solid var(--chakra-colors-chakra-border-color);
+    }
+
+    &.chakra-ui-dark {
+        // Colors
+        --surface: #2a2c3a;
+        --background: #1D1D28;
+        --contrast: #0080ff;
+        --primary: #eceff9;
+        --secondary: #A2A4AD;
+        --hint: #B0B0BA;
+        --light-contrast: #D6E4FF;
+        --disabled: #EEF2F6;
+        --border: #D5DBE2;
+        --placeholder: #CCD5DE;
+        --chakra-colors-chakra-body-bg: #F9FBFC;
+
+        // Border
+        --surface-border: 1.5px solid var(--surface);
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
-}
-
-:root {
-    // Colors
-    --surface: #EEF2F5;
-    --background: white;
-    --contrast: #175FFB;
-    --primary: #0B0E31;
-    --secondary: #39465E;
-    --hint: #798A9D;
-    --light-contrast: #D6E4FF;
-    --disabled: #EEF2F6;
-    --border: #D5DBE2;
-    --placeholder: #CCD5DE;
-    
-    // Border
-    --surface-border: 1.5px solid var(--surface);
 }

@@ -3,6 +3,7 @@ import React from "react";
 import {App} from "./App";
 import "@core/styles/globals.scss";
 import "@core/styles/normalize.css";
+import "@core/styles/chakra.scss";
 import {ChakraProvider} from '@chakra-ui/react'
 import {theme} from "./theme";
 import {BrowserRouter} from "react-router-dom";

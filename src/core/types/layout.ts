@@ -16,3 +16,7 @@ export type NavigationItem = NavPage | NavDivider
 export type SidebarConfig = {
     items: NavigationItem[],
 }
+
+export type NavbarConfig = {
+    
+}

@@ -1,0 +1,71 @@
+nav.navigation {
+    width: 100%;
+    height: 60px;
+    border-bottom: var(--surface-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    background: var(--background);
+
+    &[data-dark=true] {
+        background-color: var(--chakra-colors-gray-800);
+        border-bottom: 1px solid var(--chakra-colors-chakra-border-color);
+
+        .userName {
+            font-size: 14px;
+            color: var(--secondary);
+        }
+    }
+    
+    .page {
+        color: var(--primary);
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 21px;
+
+        display: flex;
+        align-items: center;
+
+        hr {
+            height: 25px;
+            margin: 0 20px;
+            border-left-width: 1px;
+            border-color: var(--hint);
+        }
+    }
+    
+    .right {
+        display: flex;
+        align-items: center;
+        
+        .themeButton {
+            margin-right: 10px;
+        }
+        
+        .user {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            .info {
+                margin-right: 10px;
+
+                span {
+                    display: block;
+                    text-align: end;
+
+                    &.userName {
+                        font-size: 14px;
+                        color: var(--secondary);
+                    }
+
+                    &.userRole {
+                        font-size: 11px;
+                        color: var(--hint);
+                    }
+                }
+            }
+        }
+    }
+}
