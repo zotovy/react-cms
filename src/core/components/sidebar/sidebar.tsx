@@ -21,10 +21,11 @@ export const Sidebar: React.FC<SidebarConfig> = React.memo((props) => {
             {
                 props.items.map(item => {
                     if (item.type === "divider") return <Divider
+                        key={item.key}
                         bg="var(--chakra-colors-chakra-border-color)"
                         marginY={ 15 }/>
 
-                    return <SidebarItem item={item} open={open}/>
+                    return <SidebarItem key={item.key} item={item} open={open}/>
                 })
             }
         </div>

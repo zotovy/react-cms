@@ -25,6 +25,7 @@
     "react-scripts": "5.0.1",
     "sass": "^1.53.0",
     "typescript": "^4.4.2",
+    "uuid": "^8.3.2",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
@@ -53,6 +54,7 @@
   },
   "devDependencies": {
     "@types/react-redux": "^7.1.24",
+    "@types/uuid": "^8.3.4",
     "craco-alias": "^3.0.1"
   }
 }
