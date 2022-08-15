@@ -48,8 +48,8 @@
       "@feats/*": [
         "feats/*"
       ],
-      "@config": [
-        "config"
+      "@config/*": [
+        "config/*"
       ]
     },
     "incremental": true

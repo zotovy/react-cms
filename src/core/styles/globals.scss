@@ -12,6 +12,7 @@ html {
 
 body {
     font-family: 'Rubik', -apple-system, Roboto, sans-serif;
+    transition-property: none !important;
 
     &.chakra-ui-light {
         // Colors
