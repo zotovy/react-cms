@@ -1,0 +1,27 @@
+@import "src/core/styles/animations";
+
+.page404 {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    h1 {
+        font-family: var(--chakra-fonts-heading);
+        font-weight: var(--chakra-fontWeights-bold);
+        font-size: var(--chakra-fontSizes-6xl);
+        animation: 2s baseFadeAnimation ease;
+    }
+    
+    p {
+        margin-top: var(--chakra-space-4);
+        @include animateBaseFade;
+    }
+    
+    button {
+        margin-top: var(--chakra-space-4);
+        @include animateBaseFade;
+    }
+}

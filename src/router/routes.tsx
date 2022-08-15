@@ -1,6 +1,6 @@
 import { usersRoutes } from "@feats/users/routes";
 import { RouteObject } from "react-router-dom";
-import { Page404 } from "./404";
+import { Page404 } from "./404/404";
 
 export const routes: RouteObject[] = [
     {
