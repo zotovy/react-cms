@@ -8,6 +8,19 @@ export const theme = extendTheme({
                 bg: mode("#F9FBFC", "#171822")(props),
                 
             }
-        }) 
+        }),
+    },
+    components: {
+        Button: {
+            variants: {
+                primary: {
+                    bg: "var(--contrast)",
+                    color: "white",
+                    _hover: {
+                        bg: "var(--contrastHover)",
+                    }
+                }
+            }
+        }
     }
 })
