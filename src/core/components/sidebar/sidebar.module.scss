@@ -1,12 +1,18 @@
+@import "../../styles/breakpoints";
+
+$width: 73px;
+$fullWidth: 256px;
+
 .sidebar {
-    width: 73px;
+    width: $width;
     border-right: var(--surface-border);
     background-color: var(--background);
     height: 100vh;
     display: flex;
     flex-direction: column;
-    transition: width 400ms ease;
+    transition: 400ms ease;
     overflow-x: hidden;
+    z-index: 10;
 
     &[data-dark=true] {
         background-color: var(--chakra-colors-gray-800);
@@ -133,8 +139,8 @@
         }
     }
 
-    &.open {
-        width: 256px;
+    @mixin openStateStyles {
+        width: $fullWidth;
 
         .logoItem span {
             opacity: 1;
@@ -163,6 +169,40 @@
                 transform: translateX(0);
                 transition: 300ms ease;
             }
+        }
+    }
+
+    &[data-open=true] {
+        @include openStateStyles;
+    }
+
+    @include lt-md {
+        position: absolute;
+        @include openStateStyles;
+
+        &:not(&[data-open=true]) {
+            transform: translateX(-$fullWidth);
+        }
+    }
+}
+
+.sidebarOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 9;
+    transition: opacity 400ms ease;
+    opacity: 0;
+    pointer-events: none;
+
+    @include lt-md {
+        &[data-open=true] {
+            opacity: 1;
+            pointer-events: initial;
         }
     }
 }
