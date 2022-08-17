@@ -9,13 +9,11 @@ import {
     MenuList,
 } from "@chakra-ui/react";
 import { ThemeButton } from "@core/components/buttons/theme-button";
-import { useDarkMode } from "@core/hooks/use-dark-mode";
-import { useSidebar } from "@core/hooks/use-sidebar";
 import { Menu as MenuIcon } from "react-feather";
+import { useNavbar } from "@core/components/navbar/use-navbar";
 
-export const Navbar: React.FC = () => {
-    const isDark = useDarkMode()
-    const {toggleSidebar} = useSidebar()
+export const Navbar: React.FC = React.memo(() => {
+    const { handleLogout, toggleSidebar, isDark } = useNavbar()
 
     return <nav className={ styles.navigation } data-dark={ isDark }>
         <div className={ styles.left }>
@@ -42,9 +40,9 @@ export const Navbar: React.FC = () => {
                 </MenuButton>
                 <MenuList borderColor="surface">
                     <MenuItem>Settings</MenuItem>
-                    <MenuItem>Logout</MenuItem>
+                    <MenuItem onClick={handleLogout}>Logout</MenuItem>
                 </MenuList>
             </Menu>
         </div>
     </nav>
-}
+})

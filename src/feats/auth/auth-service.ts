@@ -26,4 +26,9 @@ export default class AuthService {
     static isSignedIn(): boolean {
         return !!LocalStorage.user && !!LocalStorage.tokens
     }
+    
+    static async logout() {
+        LocalStorage.user = undefined
+        LocalStorage.tokens = undefined
+    }
 }
