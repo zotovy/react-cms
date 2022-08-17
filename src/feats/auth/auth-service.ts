@@ -1,6 +1,7 @@
 import { LoginArgs } from "@feats/auth/redux/auth-actions";
 import { LoginStatus } from "@feats/auth/redux/state";
 import { wait } from "@core/utils/wait";
+import LocalStorage from "@core/services/local-storage";
 
 
 export default class AuthService {
@@ -20,5 +21,9 @@ export default class AuthService {
             }
         }
         return "invalid-email"
+    }
+    
+    static isSignedIn(): boolean {
+        return !!LocalStorage.user && !!LocalStorage.tokens
     }
 }
