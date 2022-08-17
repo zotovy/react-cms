@@ -13,7 +13,6 @@ export const login = createAsyncThunk(
     async (args: LoginArgs): Promise<AuthState> => {
         const data = await AuthService.login(args)
         
-        
         // handle error
         if (typeof data === "string") {
            return {

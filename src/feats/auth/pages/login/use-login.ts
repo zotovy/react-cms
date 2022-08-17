@@ -6,6 +6,7 @@ import { selectAuthType } from "@feats/auth/redux/auth-selectors";
 import { store } from "@redux/store";
 import { useNavigate } from "react-router-dom";
 import { useErrorToast } from "@core/utils/ui/use-toast";
+import { getHomeRoute } from "../../../../App";
 
 export function useLogin() {
     const dispatch = useAppDispatch()
@@ -28,7 +29,7 @@ export function useLogin() {
                 } else if (authType === "not-authorized") {
                     showError("Invalid state")
                 } else {
-                    navigate("/", {replace: true})
+                    navigate(getHomeRoute(), {replace: true})
                 }
             },
             validationSchema: yup.object({
