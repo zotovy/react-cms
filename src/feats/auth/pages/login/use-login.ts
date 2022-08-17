@@ -6,7 +6,7 @@ import { selectAuthType } from "@feats/auth/redux/auth-selectors";
 import { store } from "@redux/store";
 import { useNavigate } from "react-router-dom";
 import { useErrorToast } from "@core/utils/ui/use-toast";
-import { getHomeRoute } from "../../../../App";
+import { getHomeRoute } from "../../../../router/routes";
 
 export function useLogin() {
     const dispatch = useAppDispatch()

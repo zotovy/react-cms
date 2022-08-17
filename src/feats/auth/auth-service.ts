@@ -12,7 +12,8 @@ export default class AuthService {
             return {
                 user: {
                     name: "Roman Shchurov",
-                    permissions: ["dashboard"]
+                    permissions: ["dashboard"],
+                    role: "admin"
                 },
                 tokens: {
                     access: "123.123.123",
@@ -27,7 +28,7 @@ export default class AuthService {
         return !!LocalStorage.user && !!LocalStorage.tokens
     }
     
-    static async logout() {
+    static logout() {
         LocalStorage.user = undefined
         LocalStorage.tokens = undefined
     }

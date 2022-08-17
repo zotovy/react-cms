@@ -2,7 +2,8 @@ export type Permission = "dashboard"
 
 export type User = {
     name: string,
-    permissions: Permission[]
+    permissions: Permission[],
+    role: string,
 }
 
 export type Tokens = {

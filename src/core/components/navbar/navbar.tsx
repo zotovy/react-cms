@@ -13,7 +13,7 @@ import { Menu as MenuIcon } from "react-feather";
 import { useNavbar } from "@core/components/navbar/use-navbar";
 
 export const Navbar: React.FC = React.memo(() => {
-    const { handleLogout, toggleSidebar, isDark } = useNavbar()
+    const {handleLogout, toggleSidebar, isDark, user} = useNavbar()
 
     return <nav className={ styles.navigation } data-dark={ isDark }>
         <div className={ styles.left }>
@@ -30,8 +30,8 @@ export const Navbar: React.FC = React.memo(() => {
                 <MenuButton>
                     <div className={ styles.user }>
                         <div className={ styles.info }>
-                            <span className={ styles.userName }>John Doe</span>
-                            <span className={ styles.userRole }>Admin</span>
+                            <span className={ styles.userName }>{ user?.name ?? "" }</span>
+                            <span className={ styles.userRole }>{ user?.role ?? "" }</span>
                         </div>
                         <Avatar boxSize="32px">
                             <AvatarBadge boxSize='16px' bg='green.500' margin="0 0 1px 3px"/>
@@ -40,7 +40,7 @@ export const Navbar: React.FC = React.memo(() => {
                 </MenuButton>
                 <MenuList borderColor="surface">
                     <MenuItem>Settings</MenuItem>
-                    <MenuItem onClick={handleLogout}>Logout</MenuItem>
+                    <MenuItem onClick={ handleLogout }>Logout</MenuItem>
                 </MenuList>
             </Menu>
         </div>

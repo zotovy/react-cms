@@ -2,18 +2,21 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { AuthState } from "@feats/auth/redux/state";
 import { login } from "@feats/auth/redux/auth-actions";
 import LocalStorage from "@core/services/local-storage";
+import AuthService from "@feats/auth/auth-service";
 
 const slice = createSlice({
     name: "auth",
-    initialState: () => {
-        return {type: "not-authorized"} as AuthState
+    initialState: (): AuthState => {
+        const user = LocalStorage.user
+        if (user) {
+            return {type: "authorized", user}
+        }
+
+        return {type: "not-authorized"}
     },
     reducers: {
         logout: (_state, _action: PayloadAction<void>) => {
-            // Remove user & tokens
-            LocalStorage.user = undefined
-            LocalStorage.tokens = undefined
-
+            AuthService.logout()
             return {type: "not-authorized"}
         }
     },
@@ -21,6 +24,6 @@ const slice = createSlice({
         .addCase(login.fulfilled, (_, action) => action.payload)
 })
 
-export const { logout } = slice.actions
+export const {logout} = slice.actions
 
 export default slice.reducer
