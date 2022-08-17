@@ -17,3 +17,5 @@ export const selectUser = ({ auth }: RootState): User | null => {
 }
 
 export const selectAuthType = ({ auth }: RootState) => auth.type
+
+export const selectIsAuthorized = ({ auth }: RootState) => auth.type === "authorized"

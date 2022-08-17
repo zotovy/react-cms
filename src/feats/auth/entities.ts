@@ -1,4 +1,4 @@
-export type Permission = "dashboard"
+export type Permission = "dashboard" | "test"
 
 export type User = {
     name: string,

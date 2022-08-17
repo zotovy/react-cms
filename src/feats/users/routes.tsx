@@ -1,9 +1,10 @@
-import { RouteObject } from "react-router-dom";
 import { UsersList } from "./pages/users-list";
+import { Route } from "@router/router";
 
-export const usersRoutes: RouteObject[] = [
+export const usersRoutes: Route[] = [
     {
         path: "/apps/users/list",
-        element: <UsersList/>,
+        page: <UsersList/>,
+        authentication: true,
     }
 ]

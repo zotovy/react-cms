@@ -1,13 +1,13 @@
 import { usersRoutes } from "@feats/users/routes";
-import { RouteObject } from "react-router-dom";
 import { Page404 } from "./404/404";
 import { authRoutes } from "@feats/auth/routes";
 import AuthService from "@feats/auth/auth-service";
+import { Route } from "./router";
 
-export const routes: RouteObject[] = [
+export const routes: Route[] = [
     {
         path: "*",
-        element: <Page404/>,
+        page: <Page404/>,
     },
     ...authRoutes,
     ...usersRoutes,

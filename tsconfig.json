@@ -50,6 +50,9 @@
       ],
       "@config/*": [
         "config/*"
+      ],
+      "@router/*": [
+        "router/*"
       ]
     },
     "incremental": true
