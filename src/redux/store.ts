@@ -2,9 +2,11 @@ import {Action, combineReducers, configureStore, ThunkAction} from "@reduxjs/too
 
 // Reducers
 import coreReducers from "core/redux"
+import authReducer from "@feats/auth/redux/auth-reducer";
 
 const rootReducer = combineReducers({
     ...coreReducers,
+    auth: authReducer,
 })
 
 export const store = configureStore({

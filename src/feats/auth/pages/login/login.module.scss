@@ -48,10 +48,14 @@
                 margin-top: 20px;
             }
             
-            button {
+            button[type=submit] {
                 width: 100%;
                 margin-top: 20px;
             }
+        }
+        
+        p[role=note] {
+            //max-width: 200px;
         }
     }
 }
