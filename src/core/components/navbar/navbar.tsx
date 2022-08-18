@@ -12,15 +12,17 @@ import { ThemeButton } from "@core/components/buttons/theme-button";
 import { Menu as MenuIcon } from "react-feather";
 import { useNavbar } from "@core/components/navbar/use-navbar";
 
-export const Navbar: React.FC = React.memo(() => {
+type Props = {
+    page: string    
+}
+
+export const Navbar: React.FC<Props> = React.memo((props) => {
     const {handleLogout, toggleSidebar, isDark, user} = useNavbar()
 
     return <nav className={ styles.navigation } data-dark={ isDark }>
         <div className={ styles.left }>
             <MenuIcon color="var(--hint)" className={ styles.burgerButton } onClick={ toggleSidebar }/>
-            <div className={ styles.page }>
-                Content
-            </div>
+            <div className={ styles.page }>{ props.page }</div>
         </div>
 
         <div className={ styles.right }>

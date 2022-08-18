@@ -10,6 +10,6 @@ export const authRoutes: Route[] = [
     {
         path: "/apps/auth/account",
         page: <AccountPage/>,
-        permissions: ["test"]
+        authentication: true,
     }
 ]

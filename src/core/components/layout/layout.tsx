@@ -8,7 +8,8 @@ import classNames from "classnames";
 
 type Props = {
     className?: string,
-    children: React.ReactNode
+    children: React.ReactNode,
+    page: string,
 }
 
 export const Layout: React.FC<Props> = (props) => {
@@ -17,7 +18,7 @@ export const Layout: React.FC<Props> = (props) => {
     return <div className={ styles.layout }>
         <Sidebar { ...config } items={ sidebarItems }/>
         <div className={ styles.editView }>
-            <Navbar/>
+            <Navbar page={props.page}/>
             <div className={classNames(styles.content, props.className)}>
                 {props.children}
             </div>

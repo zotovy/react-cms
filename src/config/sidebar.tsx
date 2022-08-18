@@ -14,7 +14,7 @@ export const sidebarConfig: SidebarConfig = {
             type: "page",
             icon: <User/>,
             text: "Account settings",
-            url: "/account",
+            url: "/apps/auth/account",
         },
         {
             type: "page",
