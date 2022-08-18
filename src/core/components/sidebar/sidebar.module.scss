@@ -1,10 +1,11 @@
 @import "../../styles/breakpoints";
 
 $width: 73px;
-$fullWidth: 256px;
+$fullWidth: 250px;
 
 .sidebar {
     width: $width;
+    min-width: $width;
     border-right: var(--surface-border);
     background-color: var(--background);
     height: 100vh;
@@ -17,6 +18,10 @@ $fullWidth: 256px;
     &[data-dark=true] {
         background-color: var(--chakra-colors-gray-800);
         border-right: 1px solid var(--chakra-colors-chakra-border-color);
+
+        .text {
+            color: rgba(255, 255, 255, 0.9);
+        }
     }
 
     .logoItem {
@@ -44,6 +49,19 @@ $fullWidth: 256px;
             opacity: 0;
             transition: 300ms ease;
         }
+    }
+
+    .text {
+        margin-left: 15px;
+        font-size: 16px;
+        color: var(--hint);
+        position: absolute;
+        left: 48px;
+        white-space: nowrap;
+        transition: 200ms ease;
+        transform: translateX(5px);
+        opacity: 0;
+
     }
 
     .items {
@@ -79,27 +97,11 @@ $fullWidth: 256px;
                 }
             }
 
-            span.text {
-                margin-left: 15px;
-                font-size: 16px;
-                color: var(--hint);
-                position: absolute;
-                left: 48px;
-                white-space: nowrap;
-                transition: 200ms ease;
-                transform: translateX(5px);
-                opacity: 0;
-            }
-
             &[data-dark=true] {
                 .icon {
                     svg {
                         color: rgba(255, 255, 255, 0.9);
                     }
-                }
-
-                span.text {
-                    color: rgba(255, 255, 255, 0.9);
                 }
             }
 
@@ -112,7 +114,7 @@ $fullWidth: 256px;
                     }
                 }
 
-                span.text {
+                .text {
                     color: var(--contrast);
                 }
             }
@@ -124,38 +126,58 @@ $fullWidth: 256px;
     }
 
     .bottom {
-        padding: 21px 35px 21px 21px;
+        display: flex;
+        align-items: center;
+        padding: 10px 15px 20px;
         color: var(--hint);
         cursor: pointer;
         width: 100%;
         transition: 400ms ease;
 
-        &:hover {
-            transform: translateX(3px);
-        }
-
         svg {
             transition: transform 300ms ease-in-out;
+        }
+        
+        .user {
+            height: 37px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: calc($fullWidth - 77px);
+            
+            .info {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                
+                .email {
+                    font-size: 14px;
+                    color: var(--primary);
+                    font-weight: 500;
+                }
+
+                .role {
+                    font-size: 11px;
+                    color: var(--hint);
+                }
+            }
+            
+            .logout {
+                transition: 0.4s ease;
+                
+                &:hover {
+                    transform: translateX(3px);
+                }
+            }
         }
     }
 
     @mixin openStateStyles {
         width: $fullWidth;
+        min-width: $fullWidth;
 
         .logoItem span {
             opacity: 1;
-        }
-
-        .bottom {
-            padding-left: calc(100% - 50px);
-
-            svg {
-                transform: rotate(180deg);
-            }
-
-            &:hover {
-                transform: translateX(-3px);
-            }
         }
 
         .items .item {
@@ -163,12 +185,12 @@ $fullWidth: 256px;
                 background: none;
                 transform: translateX(3px);
             }
+        }
 
-            span.text {
-                opacity: 1;
-                transform: translateX(0);
-                transition: 300ms ease;
-            }
+        .text {
+            opacity: 1;
+            transform: translateX(0);
+            transition: 300ms ease;
         }
     }
 

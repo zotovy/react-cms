@@ -6,9 +6,13 @@ export const theme = extendTheme({
         global: (props: any) => ({
             body: {
                 bg: mode("#F9FBFC", "#171822")(props),
-
             }
         }),
+    },
+    colors: {
+        blue: {
+            600: "#175FFB"
+        }
     },
     components: {
         Button: {
