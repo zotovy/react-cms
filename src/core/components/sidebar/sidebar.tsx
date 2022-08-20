@@ -14,8 +14,8 @@ export const Sidebar: React.FC<SidebarConfig> = React.memo((props) => {
     const {isSidebarOpened: open, toggleSidebar: toggle, user, handleLogout} = useSidebar()
     const {colorMode} = useColorMode()
 
-    return <React.Fragment>
-        <div className={ styles.sidebar } data-open={ open } data-dark={ colorMode === "dark" }>
+    return <div className={ styles.sidebarContainer } data-open={ open }>
+        <div className={ styles.sidebar } data-open={ open } data-dark={ colorMode === "dark" } data-role="sidebar">
             <div className={ styles.logoItem }>
                 T
                 <span>Company</span>
@@ -32,7 +32,7 @@ export const Sidebar: React.FC<SidebarConfig> = React.memo((props) => {
             <Spacer/>
             <SidebarDivider/>
             <div className={ styles.bottom } onClick={ toggle }>
-                <Avatar boxSize="32px">
+                <Avatar boxSize="32px" className={styles.avatar}>
                     <AvatarBadge boxSize='16px' bg='green.500' margin="0 0 1px 3px"/>
                 </Avatar>
                 <div className={ classNames(styles.user, styles.text) }>
@@ -41,7 +41,7 @@ export const Sidebar: React.FC<SidebarConfig> = React.memo((props) => {
                             {
                                 !user!.firstName && !user!.lastName
                                     ? user!.email
-                                    : ` ${user!.firstName} ${ user!.lastName }`
+                                    : ` ${ user!.firstName } ${ user!.lastName }`
                             }
                         </div>
                         <div className={ styles.role }>
@@ -55,7 +55,7 @@ export const Sidebar: React.FC<SidebarConfig> = React.memo((props) => {
             </div>
         </div>
         <div className={ styles.sidebarOverlay } data-open={ open } onClick={ toggle }/>
-    </React.Fragment>
+    </div>
 })
 
 type SidebarItemProps = {

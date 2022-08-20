@@ -22,7 +22,7 @@ export const AccountPage: React.FC = () => {
                     <FormInput label="Last name" name="lastName"/>
                     <FormInput label="Email" name="email"/>
                     <FormInput label="Username" name="username"/>
-                    <FormTextArea label="Bio" name="bio" col={2}/> 
+                    <FormTextArea label="Bio" name="bio" col={{md: 2, sm: 1}}/> 
 
                     <h3>Profile image</h3>
                     <GridItem colSpan={{md: 2, sm: 1}} className={styles.profileImage}>
