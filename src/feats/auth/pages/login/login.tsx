@@ -19,8 +19,8 @@ export const LoginPage: React.FC = () => {
 
             <Formik { ...formik }>
                 <Form>
-                    <FormInput label="Email" name="email" placeholder="Enter your email"/>
-                    <FormPasswordInput label="Password" name="password" placeholder="Enter your password"/>
+                    <FormInput name="email" placeholder="Enter your email"/>
+                    <FormPasswordInput name="password" placeholder="Enter your password"/>
                     <SubmitButton>Login</SubmitButton>
                 </Form>
             </Formik>

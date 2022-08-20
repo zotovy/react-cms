@@ -14,6 +14,7 @@ $fullWidth: 250px;
     transition: 400ms ease;
     overflow-x: hidden;
     z-index: 10;
+    position: fixed;
 
     &[data-dark=true] {
         background-color: var(--chakra-colors-gray-800);

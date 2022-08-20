@@ -23,7 +23,7 @@ export const Sidebar: React.FC<SidebarConfig> = React.memo((props) => {
             <div className={ styles.items }>
                 {
                     props.items.map(item => {
-                        if (item.type === "divider") return <SidebarDivider key={item.key}/>
+                        if (item.type === "divider") return <SidebarDivider key={ item.key }/>
 
                         return <SidebarItem key={ item.key } item={ item } open={ open }/>
                     })
@@ -38,7 +38,11 @@ export const Sidebar: React.FC<SidebarConfig> = React.memo((props) => {
                 <div className={ classNames(styles.user, styles.text) }>
                     <div className={ styles.info }>
                         <div className={ styles.email }>
-                            { user?.name ?? "" }
+                            {
+                                !user!.firstName && !user!.lastName
+                                    ? user!.email
+                                    : ` ${user!.firstName} ${ user!.lastName }`
+                            }
                         </div>
                         <div className={ styles.role }>
                             { user?.role ?? "" }

@@ -17,8 +17,9 @@ export const Layout: React.FC<Props> = (props) => {
     return <div className={ styles.layout }>
         <Sidebar { ...config } items={ sidebarItems }/>
         <div className={ styles.editView }>
-            <div className={classNames(styles.content, props.className)}>
-                {props.children}
+            <h1>{ props.page }</h1>
+            <div className={ classNames(styles.content, props.className) }>
+                { props.children }
             </div>
         </div>
     </div>

@@ -1,3 +1,25 @@
-.account {
+@import "src/core/styles/breakpoints";
+
+form.account {
     
+    h3 {
+        font-size: 18px;
+        font-weight: 500;
+        color: var(--primary);
+        margin-top: 25px;
+        grid-column: span 2/span 2;
+        
+        @include lt-md {
+            grid-column: span 1/span 1;
+        }
+    }
+    
+    .profileImage {
+        display: flex;
+        align-items: center;
+        
+        button {
+            margin-left: 25px;
+        }
+    }
 }

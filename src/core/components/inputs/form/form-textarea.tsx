@@ -4,9 +4,7 @@ import {
     FormErrorMessage,
     FormHelperText,
     FormLabel, GridItem,
-    Input,
-    InputProps,
-    InputRightElement, ResponsiveValue
+    InputRightElement, ResponsiveValue, Textarea, TextareaProps
 } from "@chakra-ui/react";
 import { useField, useFormikContext } from "formik";
 import { InputGroup } from "@chakra-ui/input";
@@ -17,17 +15,17 @@ export type Props = {
     helper?: string,
     inputRight?: React.ReactNode,
     col?: ResponsiveValue<number>,
-} & InputProps
+} & TextareaProps
 
-export const FormInput: React.FC<Props> = React.memo((props) => {
+export const FormTextArea: React.FC<Props> = React.memo((props) => {
     const [field, meta] = useField(props.name);
     const { isSubmitting } = useFormikContext()
-    
+
     return <GridItem colSpan={props.col ?? 1}>
         <FormControl isInvalid={!!meta.error && meta.touched} className="FormInput">
             { props.label && <FormLabel color="var(--secondary)" fontWeight="400">{ props.label }</FormLabel> }
             <InputGroup>
-                <Input bg="white" { ...field } disabled={isSubmitting} {...props}/>
+                <Textarea bg="white" { ...field } disabled={isSubmitting} {...props}/>
                 {
                     props.inputRight && <InputRightElement>
                         { props.inputRight }

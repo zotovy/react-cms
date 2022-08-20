@@ -11,7 +11,11 @@ export default class AuthService {
         if (arg.email === "admin@gmail.com" && arg.password === "12345") {
             return {
                 user: {
-                    name: "Roman Shchurov",
+                    email: "admin@gmail.com",
+                    firstName: "Roman",
+                    lastName: "Shchurov",
+                    bio: "Hi! I'm example account",
+                    username: "163onmyneck",
                     permissions: ["dashboard"],
                     role: "admin"
                 },

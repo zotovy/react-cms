@@ -1,9 +1,14 @@
 export type Permission = "dashboard" | "test"
 
 export type User = {
-    name: string,
+    email: string,
     permissions: Permission[],
     role: string,
+    firstName?: string,
+    lastName?: string,
+    username?: string,
+    profileImage?: string,
+    bio?: string,
 }
 
 export type Tokens = {
