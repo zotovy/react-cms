@@ -12,6 +12,7 @@ nav.navbar {
     border-bottom: 1px solid var(--surface);
     padding: 0 20px;
     z-index: 9;
+    background: var(--background);
     
     @include gt-sm {
         display: none;
