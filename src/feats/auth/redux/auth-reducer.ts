@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { AuthState } from "@feats/auth/redux/state";
-import { login } from "@feats/auth/redux/auth-actions";
+import { login, updateUser } from "@feats/auth/redux/auth-actions";
 import LocalStorage from "@core/services/local-storage";
 import AuthService from "@feats/auth/auth-service";
 
@@ -22,6 +22,7 @@ const slice = createSlice({
     },
     extraReducers: builder => builder
         .addCase(login.fulfilled, (_, action) => action.payload)
+        .addCase(updateUser.fulfilled, (_, action) => action.payload)
 })
 
 export const {logout} = slice.actions
