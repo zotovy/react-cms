@@ -17,6 +17,10 @@
             font-size: 32px;
             font-weight: 600;
             color: var(--primary);
+            
+            @include lt-md {
+                margin-top: 75px;
+            }
         }
         
         .content {

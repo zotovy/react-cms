@@ -1,0 +1,19 @@
+@import "src/core/styles/breakpoints";
+
+nav.navbar {
+    height: 48px;
+    margin-bottom: 24px;
+    position: fixed;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    left: 0;
+    top: 0;
+    border-bottom: 1px solid var(--surface);
+    padding: 0 20px;
+    z-index: 9;
+    
+    @include gt-sm {
+        display: none;
+    }
+}

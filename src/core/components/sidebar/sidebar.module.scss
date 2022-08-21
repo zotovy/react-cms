@@ -9,10 +9,12 @@ $fullWidth: 250px;
     height: 100vh;
     transition: 0.4s ease;
     z-index: 10;
+    pointer-events: none;
 
     &[data-open=true] {
         width: $fullWidth;
         min-width: $fullWidth;
+        pointer-events: all;
     }
     
     @include lt-md {
@@ -218,7 +220,7 @@ $fullWidth: 250px;
         &[data-open=true] {
             @include openStateStyles;
         }
-
+        
         @include lt-md {
             position: absolute;
             @include openStateStyles;
