@@ -4,11 +4,12 @@ import { useAccount } from "@feats/auth/pages/account/use-account";
 import { Form, Formik } from "formik";
 import styles from "@feats/auth/pages/account/account.module.scss";
 import { FormInput } from "@core/components/inputs/form/form-input";
-import { Avatar, Button, GridItem, SimpleGrid, Spacer } from "@chakra-ui/react";
+import { GridItem, SimpleGrid, Spacer } from "@chakra-ui/react";
 import { FormPasswordInput } from "@core/components/inputs/form/form-password-input";
 import { SubmitButton } from "@core/components/buttons/form/submit-button";
 import { ResetButton } from "@core/components/buttons/form/reset-button";
 import { FormTextArea } from "@core/components/inputs/form/form-textarea";
+import { EditableAvatar } from "@core/components/avatar/editable-avatar/editable-avatar";
 
 export const AccountPage: React.FC = () => {
     const {formik} = useAccount()
@@ -26,8 +27,7 @@ export const AccountPage: React.FC = () => {
 
                     <h3>Profile image</h3>
                     <GridItem colSpan={{md: 2, sm: 1}} className={styles.profileImage}>
-                        <Avatar boxSize={14}/>
-                        <Button size="sm">Change</Button>
+                        <EditableAvatar/>
                     </GridItem>
                     
                     <h3>Security</h3>
