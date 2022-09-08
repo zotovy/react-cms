@@ -1,253 +1,75 @@
 @import "src/core/styles/breakpoints";
 
-$width: 73px;
-$fullWidth: 250px;
+$sizedBarWidth: 81px;
+$sizedBarOpenWidth: 280px;
 
-.sidebarContainer {
-    width: $width;
-    min-width: $width;
-    height: 100vh;
-    transition: 0.4s ease;
-    z-index: 10;
-    pointer-events: none;
-
-    &[data-open=true] {
-        width: $fullWidth;
-        min-width: $fullWidth;
-        pointer-events: all;
-    }
-    
-    @include lt-md {
-        position: fixed;
-    }
-
-    .sidebar {
-        width: $width;
-        min-width: $width;
-        border-right: var(--surface-border);
-        background-color: var(--background);
+.sidebar {
+    .container {
+        background: white;
+        border-right: 1px solid var(--untitled-blue-gray--100);
         height: 100vh;
         display: flex;
         flex-direction: column;
-        transition: 400ms ease;
-        overflow-x: hidden;
-        z-index: 10;
-        position: fixed;
-
-        &[data-dark=true] {
-            background-color: var(--chakra-colors-gray-800);
-            border-right: 1px solid var(--chakra-colors-chakra-border-color);
-
-            .text {
-                color: rgba(255, 255, 255, 0.9);
-            }
-        }
-
-        .logoItem {
-            font-style: normal;
-            font-weight: 600;
-            font-size: 32px;
-            line-height: 38px;
-            color: var(--contrast);
-            user-select: none;
-            padding: 16px 21px 21px 25px;
-            display: flex;
-            align-items: center;
-            position: relative;
-
-            &[data-dark=true] {
-                color: var(--contrast);
-            }
-
-            span {
-                display: block;
-                position: absolute;
-                left: 63px;
-                font-weight: 500;
-                font-size: 20px;
-                opacity: 0;
-                transition: 300ms ease;
-            }
-        }
-
-        .text {
-            margin-left: 15px;
-            font-size: 16px;
-            color: var(--hint);
-            position: absolute;
-            left: 48px;
-            white-space: nowrap;
-            transition: 200ms ease;
-            transform: translateX(5px);
-            opacity: 0;
-
-        }
-
-        .items {
-            .item {
-                display: flex;
-                padding: 10px 15px;
-                margin: 5px 0;
-                align-items: center;
-                position: relative;
-
-                .icon {
-                    cursor: pointer;
-                    height: 38px;
-                    width: 38px;
-                    padding: 5px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border-radius: 7px;
-                    transition: 150ms linear;
-                    background-color: var(--background);
-
-                    &:hover {
-                        background-color: var(--surface);
-                    }
-
-                    svg {
-                        color: var(--hint);
-                    }
-
-                    &[data-dark=true] svg {
-                        color: var(--secondary);
-                    }
-                }
-
-                &[data-dark=true] {
-                    .icon {
-                        svg {
-                            color: rgba(255, 255, 255, 0.9);
-                        }
-                    }
-                }
-
-                &[data-active=true] {
-                    .icon {
-                        background-color: var(--surface);
-
-                        svg {
-                            color: var(--contrast);
-                        }
-                    }
-
-                    .text {
-                        color: var(--contrast);
-                    }
-                }
-            }
-
-            :last-child {
-                margin-bottom: 0;
-            }
-        }
-
-        .bottom {
-            display: flex;
-            align-items: center;
-            padding: 10px 15px 20px;
-            color: var(--hint);
-            cursor: pointer;
-            width: 100%;
-            transition: 400ms ease;
-
-            .avatar {
-                margin-left: 4px;
-            }
-
-            svg {
-                transition: transform 300ms ease-in-out;
-            }
-
-            .user {
-                height: 37px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                width: calc($fullWidth - 77px);
-
-                .info {
-                    display: flex;
-                    justify-content: center;
-                    flex-direction: column;
-
-                    .email {
-                        font-size: 14px;
-                        color: var(--primary);
-                        font-weight: 500;
-                    }
-
-                    .role {
-                        font-size: 11px;
-                        color: var(--hint);
-                    }
-                }
-
-                .logout {
-                    transition: 0.4s ease;
-
-                    &:hover {
-                        transform: translateX(3px);
-                    }
-                }
-            }
-        }
-
-        @mixin openStateStyles {
-            width: $fullWidth;
-            min-width: $fullWidth;
-
-            .logoItem span {
-                opacity: 1;
-            }
-
-            .items .item {
-                &:hover:not(&[data-active=true]) .icon {
-                    background: none;
-                    transform: translateX(3px);
-                }
-            }
-
-            .text {
-                opacity: 1;
-                transform: translateX(0);
-                transition: 300ms ease;
-            }
-        }
-
-        &[data-open=true] {
-            @include openStateStyles;
-        }
+        justify-content: space-between;
         
-        @include lt-md {
-            position: absolute;
-            @include openStateStyles;
+        .nav {
+            width: $sizedBarWidth;
+            padding-top: 32px;
+            
+            .header {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 24px;
+            }
 
-            &:not(&[data-open=true]) {
-                transform: translateX(-$fullWidth);
+        }
+
+        .navigation {
+            display: flex;
+            flex-direction: column;
+            padding: 0 16px;
+            gap: 8px;
+
+            .navItem {
+                width: 48px;
+                height: 48px;
+                padding: 12px;
+                border-radius: 6px;
+                background: white;
+                transition: 0.15s;
+                cursor: pointer;
+
+                &:hover {
+                    background: var(--untitled-gray--50);
+                }
+
+                svg {
+                    width: 24px;
+                    height: 24px;
+                    color: var(--untitled-gray--500);
+                }
+            }
+            
+            .divider {
+                background: var(--untitled-gray--100);
+                height: 1px;
+                width: 100%;
+                border-radius: 1px;
             }
         }
-    }
 
-    .sidebarOverlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        content: "";
-        background-color: rgba(0, 0, 0, 0.3);
-        z-index: 9;
-        transition: opacity 400ms ease;
-        opacity: 0;
-        pointer-events: none;
+        .footer {
+            padding-bottom: 24px;
 
-        @include lt-md {
-            &[data-open=true] {
-                opacity: 1;
-                pointer-events: initial;
+            .navigation {
+                gap: 24px;
+            }
+            
+            .avatar {
+                height: 40px;
+                width: 40px;
+                min-height: 40px;
+                margin: 0 4.5px;
             }
         }
     }

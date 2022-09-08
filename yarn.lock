@@ -4091,6 +4091,13 @@ copy-to-clipboard@3.3.1:
   dependencies:
     toggle-selection "^1.0.6"
 
+copy-to-clipboard@^3.3.2:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/copy-to-clipboard/-/copy-to-clipboard-3.3.2.tgz#5b263ec2366224b100181dded7ce0579b340c107"
+  integrity sha512-Vme1Z6RUDzrb6xAI7EZlVZ5uvOk2F//GaxKUxajDqm9LhOVM1inxNAD2vy+UZDYsd0uyA9s7b3/FVZPSxqrCfg==
+  dependencies:
+    toggle-selection "^1.0.6"
+
 core-js-compat@^3.21.0, core-js-compat@^3.22.1:
   version "3.23.5"
   resolved "https://registry.yarnpkg.com/core-js-compat/-/core-js-compat-3.23.5.tgz#11edce2f1c4f69a96d30ce77c805ce118909cd5b"
@@ -5868,6 +5875,11 @@ ignore@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.2.0.tgz#6d3bac8fa7fe0d45d9f9be7bac2fc279577e345a"
   integrity sha512-CmxgYGiEPCLhfLnpPp1MoRmifwEIOgjcHXxOBjv7mY96c+eWScsOP9c112ZyLdWHi0FxHjI+4uVhKYp/gcdRmQ==
+
+imask@^6.4.2:
+  version "6.4.2"
+  resolved "https://registry.yarnpkg.com/imask/-/imask-6.4.2.tgz#f1c67e6961640bf5b09d7b4a34dcf4f9a3df7e22"
+  integrity sha512-xvEgbTdk6y2dW2UAysq0NRPmO6PuaXM5NHIt4TXEJEwXUHj26M0p/fXqyrSJdNXFaGVOtqYjPRnNdrjQQhDuuA==
 
 immer@^9.0.7:
   version "9.0.15"
@@ -8388,6 +8400,14 @@ react-focus-lock@^2.9.1:
     use-callback-ref "^1.3.0"
     use-sidecar "^1.1.2"
 
+react-imask@^6.4.2:
+  version "6.4.2"
+  resolved "https://registry.yarnpkg.com/react-imask/-/react-imask-6.4.2.tgz#0bd1a4c6cc8838abfbbc340eab9f311831a57c37"
+  integrity sha512-xBGZyM0RwQ/ujX7f2ccaYxE41eB81q5Yqek6SYXAq6XT88+TdCSmIpgh5GeygRedPJu6tnnN8OXrUMTc2uFNSw==
+  dependencies:
+    imask "^6.4.2"
+    prop-types "^15.7.2"
+
 react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
@@ -8517,6 +8537,18 @@ react-style-singleton@^2.2.1:
     get-nonce "^1.0.0"
     invariant "^2.2.4"
     tslib "^2.0.0"
+
+react-untitled-ui@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/react-untitled-ui/-/react-untitled-ui-0.0.7.tgz#d12320eeec9c3151f8a3866a3dd70a3d90e0859c"
+  integrity sha512-hQNuz6j1BqYhKynMtnam7Co4Ui48JQJ+OSNMnUVy6JLym9Tj0R5ZaGKAtf0+SywSBH+w+1HJOjc2MTttFdA9cA==
+  dependencies:
+    classnames "^2.3.1"
+    copy-to-clipboard "^3.3.2"
+    react "^18.2.0"
+    react-dom "^18.2.0"
+    react-feather "^2.0.10"
+    react-imask "^6.4.2"
 
 react@^18.2.0:
   version "18.2.0"
