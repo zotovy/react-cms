@@ -8,7 +8,23 @@ export const sidebarConfig: SidebarConfig = {
             type: "page",
             icon: <Home/>,
             text: "Dashboard",
-            url: "/dashboard",
+            url: "#",
+            children: [
+                {
+                    text: "Analytics",
+                    url: "/dashboard/analytics",
+                },
+                {
+                    text: "Finance",
+                    url: "/dashboard/finance",
+                    badge: 10,
+                },
+                {
+                    text: "Sales",
+                    url: "/apps/users/list",
+                    online: true,
+                },
+            ]
         },
         {
             type: "page",

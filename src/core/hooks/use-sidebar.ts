@@ -5,10 +5,12 @@ import { useSelector } from "react-redux";
 import { selectUser } from "@feats/auth/redux/auth-selectors";
 import { useNavigate } from "react-router-dom";
 import { logout } from "@feats/auth/redux/auth-reducer";
+import { NavPage } from "@core/types/layout";
+import useCollapse from "react-collapsed";
 
 /**
  * React hook that load & changes is sidebar opened UI property
- * return isSideBarOpened flag and function to toggle this flag
+ * @return {object} - object with isSidebarOpen property, toggleSidebar function, user property, logout function
  */
 export function useSidebar() {
     const dispatch = useAppDispatch()
@@ -27,5 +29,24 @@ export function useSidebar() {
             navigate("/")
         }, [navigate, dispatch]),
         user,
+    }
+}
+
+/**
+ * React hook that used to watch for sidebar open state changes
+ * @return {object} - object with isSidebarOpen property
+ */
+export function useSidebarItem(props: NavPage) {
+    const open = useAppSelector(selectIsSidebarOpen)
+    const {getCollapseProps, getToggleProps, isExpanded} = useCollapse({
+        defaultExpanded: (props.children ?? []).some(x => window.location.href.includes(x.url))
+    })
+
+    return {
+        open,
+        hasChildren: (props.children?.length ?? 0) > 0,
+        collapsed: !isExpanded,
+        getCollapseProps,
+        getToggleProps,
     }
 }

@@ -8320,6 +8320,14 @@ react-clientside-effect@^1.2.6:
   dependencies:
     "@babel/runtime" "^7.12.13"
 
+react-collapsed@^3.3.2:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/react-collapsed/-/react-collapsed-3.3.2.tgz#b04dd13db5370ef553feac6556c911bb41dc63e2"
+  integrity sha512-P3YmP0k3Z7LaELQP2CbXjWSjiaNEIBvvxFUAJToJwztMFrTdHe9v7vQMz3FtMTyxLDJc9eGdNA8qMxCe9Aj3tg==
+  dependencies:
+    raf "^3.4.1"
+    tiny-warning "^1.0.3"
+
 react-dev-utils@^12.0.1:
   version "12.0.1"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-12.0.1.tgz#ba92edb4a1f379bd46ccd6bcd4e7bc398df33e73"
@@ -8538,10 +8546,10 @@ react-style-singleton@^2.2.1:
     invariant "^2.2.4"
     tslib "^2.0.0"
 
-react-untitled-ui@^0.0.7:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/react-untitled-ui/-/react-untitled-ui-0.0.7.tgz#d12320eeec9c3151f8a3866a3dd70a3d90e0859c"
-  integrity sha512-hQNuz6j1BqYhKynMtnam7Co4Ui48JQJ+OSNMnUVy6JLym9Tj0R5ZaGKAtf0+SywSBH+w+1HJOjc2MTttFdA9cA==
+react-untitled-ui@^0.0.11:
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/react-untitled-ui/-/react-untitled-ui-0.0.11.tgz#ac9645d67f198d0fa51a309ff5cfdacf34b8ffbd"
+  integrity sha512-ZpVe01SSfhWAxC+bSWD3c+naCUiOVs8/C3uU7lcWkPpLOQopMuMreho2rQWHltX90WnaCCWqW54u3sf6VVORLA==
   dependencies:
     classnames "^2.3.1"
     copy-to-clipboard "^3.3.2"
@@ -9519,7 +9527,7 @@ tiny-invariant@^1.0.6:
   resolved "https://registry.yarnpkg.com/tiny-invariant/-/tiny-invariant-1.2.0.tgz#a1141f86b672a9148c72e978a19a73b9b94a15a9"
   integrity sha512-1Uhn/aqw5C6RI4KejVeTg6mIS7IqxnLJ8Mv2tV5rTc0qWobay7pDUz6Wi392Cnc8ak1H0F2cjoRzb2/AW4+Fvg==
 
-tiny-warning@^1.0.2:
+tiny-warning@^1.0.2, tiny-warning@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/tiny-warning/-/tiny-warning-1.0.3.tgz#94a30db453df4c643d0fd566060d60a875d84754"
   integrity sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA==

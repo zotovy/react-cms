@@ -5,6 +5,12 @@ export type NavPage = {
     icon: React.ReactNode,
     text: string,
     url: string,
+    children?: SubNavPage[],
+}
+
+export type SubNavPage = Omit<NavPage, "type" | "icon" | "children"> & {
+    badge?: number,
+    online?: boolean,
 }
 
 export type NavDivider = {
