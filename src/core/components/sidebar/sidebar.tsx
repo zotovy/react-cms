@@ -3,9 +3,10 @@ import styles from "./sidebar.module.scss";
 import { NavigationItem, NavPage, SidebarConfig, SubNavPage } from "@core/types/layout";
 import { useSidebar, useSidebarItem } from "@core/hooks/use-sidebar";
 import { Logo } from "@core/components/logo/logo";
-import { ChevronDown, Settings } from "react-feather";
+import { ChevronDown, LogOut, Settings } from "react-feather";
 import { Avatar, Badge } from "react-untitled-ui";
 import { Link } from "react-router-dom";
+import { fullName } from "@feats/auth/entities";
 
 export const Sidebar: React.FC<SidebarConfig> = React.memo((props) => {
     const {isSidebarOpened: open, toggleSidebar: toggle, user, handleLogout} = useSidebar()
@@ -39,7 +40,18 @@ export const Sidebar: React.FC<SidebarConfig> = React.memo((props) => {
                         url="/apps/users/settings"
                         itemKey="settings-nav-item"/>
                     <SidebarDivider/>
-                    <Avatar onClick={ toggle } className={ styles.avatar } src={ user?.profileImage ?? undefined }/>
+                    <div className={ styles.user }>
+                        <Avatar onClick={ toggle } className={ styles.avatar } src={ user?.profileImage ?? undefined }/>
+                        <div className={ styles.disposable }>
+                            <div className={ styles.userDetails }>
+                                <h5 className={ styles.userName }>{ fullName(user) }</h5>
+                                <span className={ styles.userEmail }>{ user?.email ?? "" }</span>
+                            </div>
+                            <div className={ styles.logoutButton }>
+                                <LogOut onClick={ handleLogout }/>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

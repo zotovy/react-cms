@@ -19,11 +19,15 @@ const slice = createSlice({
             LocalStorage.isSidebarOpened = newValue
             state.open = newValue;
         },
+        openSidebar: (state) => {
+            LocalStorage.isSidebarOpened = true
+            state.open = true;
+        }
     }
 })
 
 export default slice.reducer
 
-export const { toggle } = slice.actions
+export const { toggle, openSidebar } = slice.actions
 
 export const selectIsSidebarOpen = (state: RootState) => state.coreSidebar.open

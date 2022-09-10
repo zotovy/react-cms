@@ -1,6 +1,6 @@
-import { useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "@redux/hooks";
-import { selectIsSidebarOpen, toggle } from "@core/redux/sidebar-reducer";
+import { openSidebar, selectIsSidebarOpen, toggle } from "@core/redux/sidebar-reducer";
 import { useSelector } from "react-redux";
 import { selectUser } from "@feats/auth/redux/auth-selectors";
 import { useNavigate } from "react-router-dom";
@@ -38,8 +38,19 @@ export function useSidebar() {
  */
 export function useSidebarItem(props: NavPage) {
     const open = useAppSelector(selectIsSidebarOpen)
+    const dispatch = useAppDispatch()
+    const [collapsed, setCollapsed] = useState(!(props.children ?? []).some(x => window.location.href.includes(x.url)))
+    const [firstRender, setFirstRender] = useState(true)
+
+    useEffect(() => {
+        if (!firstRender && !open) setCollapsed(true);
+        setFirstRender(false);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [open])
+
     const {getCollapseProps, getToggleProps, isExpanded} = useCollapse({
-        defaultExpanded: (props.children ?? []).some(x => window.location.href.includes(x.url))
+        isExpanded: !collapsed,
+        onExpandStart: () => dispatch(openSidebar()),
     })
 
     return {
@@ -47,6 +58,6 @@ export function useSidebarItem(props: NavPage) {
         hasChildren: (props.children?.length ?? 0) > 0,
         collapsed: !isExpanded,
         getCollapseProps,
-        getToggleProps,
+        getToggleProps: () => getToggleProps({onClick: () => setCollapsed(prev => !prev)}),
     }
 }
