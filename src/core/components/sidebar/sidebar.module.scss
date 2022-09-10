@@ -6,9 +6,11 @@ $sizedBarOpenWidth: 280px;
 .sidebar {
     transition: 0.25s ease;
     width: $sizedBarWidth;
+    min-width: $sizedBarWidth;
 
     &[data-open=true] {
         width: $sizedBarOpenWidth;
+        min-width: $sizedBarOpenWidth;
     }
 
     .container {
@@ -90,7 +92,7 @@ $sizedBarOpenWidth: 280px;
                         color: var(--untitled-gray--500);
                     }
 
-                    &:hover {
+                    &:hover, &[data-active=true] {
                         background: var(--untitled-gray--50);
                     }
 
@@ -144,7 +146,7 @@ $sizedBarOpenWidth: 280px;
                         justify-content: space-between;
                         align-items: center;
 
-                        &:hover {
+                        &:hover, &[data-active=true] {
                             background: var(--untitled-gray--50);
                         }
 

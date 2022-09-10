@@ -1,6 +1,14 @@
 import React from "react";
 import styles from "./sidebar.module.scss";
-import { NavigationItem, NavPage, SidebarConfig, SubNavPage } from "@core/types/layout";
+import {
+    ContainerNavPage,
+    isContainerNavPage,
+    isNavPage,
+    NavigationItem,
+    NavPage,
+    SidebarConfig,
+    SubNavPage
+} from "@core/types/layout";
 import { useSidebar, useSidebarItem } from "@core/hooks/use-sidebar";
 import { Logo } from "@core/components/logo/logo";
 import { ChevronDown, LogOut, Settings } from "react-feather";
@@ -26,7 +34,7 @@ export const Sidebar: React.FC<SidebarConfig> = React.memo((props) => {
                     {
                         props.items.map((item: NavigationItem) => {
                             if (item.type === "divider") return <SidebarDivider key={ item.key }/>
-                            return <SidebarItem key={ item.key } itemKey={ item.key! } { ...item }/>
+                            return <SidebarItem itemKey={ item.key! } { ...item }/>
                         })
                     }
                 </div>
@@ -38,6 +46,7 @@ export const Sidebar: React.FC<SidebarConfig> = React.memo((props) => {
                         type="page"
                         text="Settings"
                         url="/apps/users/settings"
+                        key="settings-nav-item"
                         itemKey="settings-nav-item"/>
                     <SidebarDivider/>
                     <div className={ styles.user }>
@@ -58,16 +67,26 @@ export const Sidebar: React.FC<SidebarConfig> = React.memo((props) => {
     </div>
 })
 
-export const SidebarItem: React.FC<NavPage & { itemKey: string }> = React.memo((props) => {
+export const SidebarItem: React.FC<(NavPage | ContainerNavPage) & { itemKey: string }> = React.memo((props) => {
     const {icon: Icon} = props
-    const {open, collapsed, getCollapseProps, getToggleProps, hasChildren} = useSidebarItem(props)
+    const {
+        open,
+        collapsed,
+        getCollapseProps,
+        getToggleProps,
+        hasChildren,
+        active,
+        activeChildren,
+    } = useSidebarItem(props as ContainerNavPage, props.itemKey)
+    
 
     return <div className={ styles.navItemContainer }>
         <Link
             { ...getToggleProps() }
-            to={ props.url }
+            to={ isNavPage(props) ? props.url : "#" }
             className={ styles.navItem }
             data-open={ open }
+            data-active={ active }
             data-collapsed={ collapsed }>
             { Icon }
             <div className={ styles.disposable }>
@@ -81,10 +100,11 @@ export const SidebarItem: React.FC<NavPage & { itemKey: string }> = React.memo((
         </Link>
         <div { ...getCollapseProps() } className={ styles.navChildren }>
             {
-                props.children?.map((item: SubNavPage, i) => {
+                isContainerNavPage(props) && props.children.map((item: SubNavPage, i) => {
                     return <Link
                         to={ item.url }
                         key={ `${ props.itemKey }-${ i }` }
+                        data-active={ i === activeChildren }
                         className={ styles.navChildrenItem }>
                         <span>{ item.text }</span>
                         { item.badge && <Badge color="blue-gray" className={ styles.badge }>{ item.badge }</Badge> }
@@ -96,6 +116,6 @@ export const SidebarItem: React.FC<NavPage & { itemKey: string }> = React.memo((
     </div>
 })
 
-export const SidebarDivider: React.FC = () => {
+export const SidebarDivider: React.FC = React.memo(() => {
     return <div className={ styles.divider }/>
-}
+})

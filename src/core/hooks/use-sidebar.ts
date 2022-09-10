@@ -1,11 +1,17 @@
 import { useCallback, useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "@redux/hooks";
-import { openSidebar, selectIsSidebarOpen, toggle } from "@core/redux/sidebar-reducer";
+import {
+    shrinkItem,
+    openSidebar,
+    selectIsSidebarItemExpanded,
+    selectIsSidebarOpen,
+    toggle, toggleExpand
+} from "@core/redux/sidebar-reducer";
 import { useSelector } from "react-redux";
 import { selectUser } from "@feats/auth/redux/auth-selectors";
 import { useNavigate } from "react-router-dom";
 import { logout } from "@feats/auth/redux/auth-reducer";
-import { NavPage } from "@core/types/layout";
+import { ContainerNavPage, isContainerNavPage, NavPage } from "@core/types/layout";
 import useCollapse from "react-collapsed";
 
 /**
@@ -36,28 +42,34 @@ export function useSidebar() {
  * React hook that used to watch for sidebar open state changes
  * @return {object} - object with isSidebarOpen property
  */
-export function useSidebarItem(props: NavPage) {
+export function useSidebarItem(props: NavPage | ContainerNavPage, key: string) {
     const open = useAppSelector(selectIsSidebarOpen)
     const dispatch = useAppDispatch()
-    const [collapsed, setCollapsed] = useState(!(props.children ?? []).some(x => window.location.href.includes(x.url)))
+    const expanded = useAppSelector(selectIsSidebarItemExpanded(key))
     const [firstRender, setFirstRender] = useState(true)
 
     useEffect(() => {
-        if (!firstRender && !open) setCollapsed(true);
+        if (!firstRender && !open) dispatch(shrinkItem(key));
         setFirstRender(false);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [open])
 
     const {getCollapseProps, getToggleProps, isExpanded} = useCollapse({
-        isExpanded: !collapsed,
+        isExpanded: expanded,
         onExpandStart: () => dispatch(openSidebar()),
     })
 
     return {
         open,
-        hasChildren: (props.children?.length ?? 0) > 0,
+        hasChildren: isContainerNavPage(props) ? (props.children?.length ?? 0) > 0 : false,
         collapsed: !isExpanded,
         getCollapseProps,
-        getToggleProps: () => getToggleProps({onClick: () => setCollapsed(prev => !prev)}),
+        getToggleProps: () => getToggleProps({onClick: () => dispatch(toggleExpand(key))}),
+        active: isContainerNavPage(props)
+            ? props.children?.some(x => window.location.href.includes(x.url)) ?? false
+            : window.location.href.includes(props.url),
+        activeChildren: isContainerNavPage(props) 
+            ? props.children.findIndex(x => window.location.href.includes(x.url))
+            : undefined,
     }
 }
