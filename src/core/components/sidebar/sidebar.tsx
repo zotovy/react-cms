@@ -64,6 +64,7 @@ export const Sidebar: React.FC<SidebarConfig> = React.memo((props) => {
                 </div>
             </div>
         </div>
+        <div className={ styles.sidebarOverlay } data-open={ open } onClick={ toggle }/>
     </div>
 })
 
@@ -77,8 +78,9 @@ export const SidebarItem: React.FC<(NavPage | ContainerNavPage) & { itemKey: str
         hasChildren,
         active,
         activeChildren,
+        handleItemClick,
     } = useSidebarItem(props as ContainerNavPage, props.itemKey)
-    
+
 
     return <div className={ styles.navItemContainer }>
         <Link
@@ -102,6 +104,7 @@ export const SidebarItem: React.FC<(NavPage | ContainerNavPage) & { itemKey: str
             {
                 isContainerNavPage(props) && props.children.map((item: SubNavPage, i) => {
                     return <Link
+                        onClick={ handleItemClick }
                         to={ item.url }
                         key={ `${ props.itemKey }-${ i }` }
                         data-active={ i === activeChildren }

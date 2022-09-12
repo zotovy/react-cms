@@ -2,60 +2,67 @@
     width: 100vw;
     height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    .inner {
-        max-width: 400px;
-        padding: 20px;
+
+    .left, .right {
+        width: 50vw;
+        height: 100vh;
+    }
+
+    .left {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        
-        .logo {
-            font-weight: 600;
-            font-size: 14px;
-            background-color: var(--contrast);
-            user-select: none;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-            color: var(--surface);
-        }
-        
-        h1 {
-            font-size: 36px;
-            font-weight: 600;
-            margin-top: 15px;
-        }
-        
-        p {
-            color: var(--secondary);
-            font-size: 15px;
-            text-align: center;
-            max-width: 300px;
-            margin-top: 15px;
-        }
-        
-        form {
-            width: 100%;
-            margin-top: 20px;
+        justify-content: space-between;
+        max-width: 660px;
+        margin-left: auto;
+        padding: 30px 20px 30px 20px;
+
+        form.loginForm {
+            display: inline-flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 335px;
             
-            div[role=group] {
-                margin-top: 20px;
+            h1.formTitle {
+                color: var(--untitled-gray--700);
+                font-size: 36px;
+                font-weight: 600;
+            }
+            
+            span.formSubtitle {
+                color: var(--untitled-gray--400);
+                font-size: 16px;
+            }
+            
+            input[type=checkbox] {
+                margin-top: 0;
+                
+                &:after {
+                    height: 22px;
+                }
             }
             
             button[type=submit] {
-                width: 100%;
-                margin-top: 20px;
+                margin-top: 12px;
             }
         }
+
+        span.copyright {
+            color: var(--untitled-gray--400);
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+    
+    .right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--untitled-blue-gray--100);
         
-        p[role=note] {
-            //max-width: 200px;
+        img {
+            width: 60%;
+            max-width: 450px;
+            margin: 16% 30px 30px;
         }
     }
 }

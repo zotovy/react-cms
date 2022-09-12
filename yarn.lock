@@ -8546,10 +8546,10 @@ react-style-singleton@^2.2.1:
     invariant "^2.2.4"
     tslib "^2.0.0"
 
-react-untitled-ui@^0.0.11:
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/react-untitled-ui/-/react-untitled-ui-0.0.11.tgz#ac9645d67f198d0fa51a309ff5cfdacf34b8ffbd"
-  integrity sha512-ZpVe01SSfhWAxC+bSWD3c+naCUiOVs8/C3uU7lcWkPpLOQopMuMreho2rQWHltX90WnaCCWqW54u3sf6VVORLA==
+react-untitled-ui@^0.0.16:
+  version "0.0.16"
+  resolved "https://registry.yarnpkg.com/react-untitled-ui/-/react-untitled-ui-0.0.16.tgz#f32574ae84022adc7fdf2ac1ba720869a49ca373"
+  integrity sha512-x2L2xQTiwzseMj26jRoJ32pLetyTaWbsW738I1qzivZ6HhObKmYKMYJw/uf3BXQB6JmGKQv/uWb8BQyERvFZOA==
   dependencies:
     classnames "^2.3.1"
     copy-to-clipboard "^3.3.2"

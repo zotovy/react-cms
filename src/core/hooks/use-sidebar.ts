@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { logout } from "@feats/auth/redux/auth-reducer";
 import { ContainerNavPage, isContainerNavPage, NavPage } from "@core/types/layout";
 import useCollapse from "react-collapsed";
+import { useMediaQuery } from "react-untitled-ui";
 
 /**
  * React hook that load & changes is sidebar opened UI property
@@ -47,6 +48,7 @@ export function useSidebarItem(props: NavPage | ContainerNavPage, key: string) {
     const dispatch = useAppDispatch()
     const expanded = useAppSelector(selectIsSidebarItemExpanded(key))
     const [firstRender, setFirstRender] = useState(true)
+    const [isMobile] = useMediaQuery('(max-width: 767px)')
 
     useEffect(() => {
         if (!firstRender && !open) dispatch(shrinkItem(key));
@@ -71,5 +73,6 @@ export function useSidebarItem(props: NavPage | ContainerNavPage, key: string) {
         activeChildren: isContainerNavPage(props) 
             ? props.children.findIndex(x => window.location.href.includes(x.url))
             : undefined,
+        handleItemClick: () => isMobile && dispatch(toggle()),
     }
 }

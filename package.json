@@ -29,7 +29,7 @@
     "react-redux": "^8.0.2",
     "react-router-dom": "6",
     "react-scripts": "5.0.1",
-    "react-untitled-ui": "^0.0.11",
+    "react-untitled-ui": "^0.0.16",
     "sass": "^1.53.0",
     "typescript": "^4.4.2",
     "uuid": "^8.3.2",

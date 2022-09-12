@@ -13,6 +13,14 @@ $sizedBarOpenWidth: 280px;
         min-width: $sizedBarOpenWidth;
     }
 
+    @include lt-md {
+        position: fixed;
+        top: 0;
+        z-index: 10;
+        width: $sizedBarOpenWidth;
+        min-width: $sizedBarOpenWidth;
+    }
+
     .container {
         position: fixed;
         background: white;
@@ -26,6 +34,7 @@ $sizedBarOpenWidth: 280px;
         overflow-x: hidden;
         max-width: $sizedBarWidth;
         transition: 0.25s ease;
+        z-index: 9;
 
         &[data-open=true] {
             max-width: $sizedBarOpenWidth;
@@ -238,6 +247,16 @@ $sizedBarOpenWidth: 280px;
             min-width: 182px;
             pointer-events: none;
         }
+        
+        @include lt-md {
+            position: absolute;
+            max-width: $sizedBarOpenWidth;
+            transition: transform 0.5s;
+
+            &:not(&[data-open=true]) {
+                transform: translateX(-$sizedBarOpenWidth);
+            }
+        }
     }
 
     &[data-open=true] {
@@ -245,6 +264,27 @@ $sizedBarOpenWidth: 280px;
             transform: translateX(0%);
             opacity: 1;
             pointer-events: all;
+        }
+    }
+
+    .sidebarOverlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        content: "";
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 8;
+        transition: opacity 400ms ease;
+        opacity: 0;
+        pointer-events: none;
+
+        @include lt-md {
+            &[data-open=true] {
+                opacity: 1;
+                pointer-events: initial;
+            }
         }
     }
 }

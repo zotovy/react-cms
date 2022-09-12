@@ -11,7 +11,7 @@ html {
 }
 
 body {
-    font-family: 'Rubik', -apple-system, Roboto, sans-serif;
+    font-family: 'Inter', -apple-system, Roboto, sans-serif !important;
     transition-property: none !important;
 
     &.chakra-ui-light {
