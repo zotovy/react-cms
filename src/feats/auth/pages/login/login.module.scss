@@ -35,9 +35,10 @@
             display: inline-flex;
             flex-direction: column;
             gap: 12px;
-            max-width: 500px;
+            max-width: 335px;
 
             @include lt-lg {
+                max-width: 500px;
                 align-items: center;
 
                 [role=grid-container] {
