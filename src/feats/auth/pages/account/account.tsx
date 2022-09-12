@@ -37,7 +37,7 @@ export const AccountPage: React.FC = () => {
                     <FormPasswordInput label="Confirm password" name="confirmPassword"/>
                 
                     <GridItem colSpan={{md: 2, sm: 1}}>
-                        <SubmitButton minW="100px">Save</SubmitButton>
+                        {/*<SubmitButton minW="100px">Save</SubmitButton>*/}
                         <ResetButton minW="100px">Reset</ResetButton>
                     </GridItem>
                 </SimpleGrid>

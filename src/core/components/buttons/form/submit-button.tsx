@@ -1,17 +1,12 @@
 import React from "react";
-import { Button, ButtonProps } from "@chakra-ui/react";
 import { useFormikContext } from "formik";
+import { Button, ButtonProps } from "react-untitled-ui";
 
-type Props = {
-    children: React.ReactNode,
-} & ButtonProps
-
-export const SubmitButton: React.FC<Props> = (props) => {
+export const SubmitButton: React.FC<ButtonProps> = (props) => {
     const {isSubmitting} = useFormikContext()
 
     return <Button
-        isLoading={ isSubmitting }
-        variant='primary'
+        loading={ isSubmitting }
         type="submit"
         { ...props }>
         { props.children }

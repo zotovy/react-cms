@@ -1,19 +1,21 @@
 import React, { CSSProperties } from "react";
 import styles from "./logo.module.scss";
+import classNames from "classnames";
 
 export type LogoProps = {
     size?: CSSProperties["width"] | CSSProperties["height"];
-    text?: boolean
+    text?: boolean;
+    className?: string;
 }
 
 export const Logo: React.FC<LogoProps> = React.memo((props) => {
     const {size = 32} = props;
 
-    return <div className={ styles.logo } style={ {width: size, height: size} }>
+    return <div className={ classNames(props.className, styles.logo) } style={ {width: size, height: size} }>
         <img src="/logo.png" alt="Logo"/>
         {
             props.text &&
-            <svg viewBox="0 0 101 17" xmlns="http://www.w3.org/2000/svg" className={styles.text}>
+            <svg viewBox="0 0 101 17" xmlns="http://www.w3.org/2000/svg" className={ styles.text }>
                 <path
                     d="M10.0037 1.45459H12.6386V10.9574C12.6386 11.9991 12.3924 12.9153 11.9 13.706C11.4123 14.4967 10.7258 15.1146 9.84034 15.5597C8.95492 16 7.92036 16.2202 6.73664 16.2202C5.5482 16.2202 4.51127 16 3.62585 15.5597C2.74043 15.1146 2.05388 14.4967 1.56619 13.706C1.0785 12.9153 0.834656 11.9991 0.834656 10.9574V1.45459H3.4696V10.7373C3.4696 11.3433 3.60217 11.8831 3.86733 12.3566C4.13721 12.8301 4.516 13.2017 5.00369 13.4716C5.49138 13.7368 6.06903 13.8694 6.73664 13.8694C7.40426 13.8694 7.98191 13.7368 8.4696 13.4716C8.96202 13.2017 9.34081 12.8301 9.60596 12.3566C9.87111 11.8831 10.0037 11.3433 10.0037 10.7373V1.45459Z"
                     fill="#101828"/>

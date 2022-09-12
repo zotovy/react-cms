@@ -6,7 +6,8 @@ import { Form, Formik } from "formik";
 import { FormPasswordInput } from "@core/components/inputs/form/form-password-input";
 import { Logo } from "@core/components/logo/logo";
 import { appConfig } from "@config/app";
-import { Button, Checkbox } from "react-untitled-ui";
+import { Checkbox } from "react-untitled-ui";
+import { SubmitButton } from "@core/components/buttons/form/submit-button";
 
 export const LoginPage: React.FC = () => {
     const {formik, rememberMe, handleRememberMeChange} = useLogin()
@@ -16,6 +17,7 @@ export const LoginPage: React.FC = () => {
             <Logo text/>
             <Formik { ...formik }>
                 <Form className={ styles.loginForm }>
+                    <img src="/white-logo.png" alt="" className={styles.logo}/>
                     <h1 className={ styles.formTitle }>Sign in</h1>
                     <span className={ styles.formSubtitle }>
                         Welcome back! Please enter your details
@@ -31,11 +33,12 @@ export const LoginPage: React.FC = () => {
                         placeholder="Enter your password"
                         fullWidth/>
                     <Checkbox
+                        className={ styles.checkbox }
                         label="Remember me"
                         id="remember-me"
                         value={ rememberMe }
                         onChange={ handleRememberMeChange }/>
-                    <Button fullWidth type="submit">Login</Button>
+                    <SubmitButton fullWidth>Login</SubmitButton>
                 </Form>
             </Formik>
             <span className={ styles.copyright }>

@@ -14,7 +14,7 @@ export const FormInput: React.FC<Props> = React.memo((props) => {
 
     const error = !!meta.error && meta.touched ? meta.error : undefined
 
-    return <GridItem colSpan={ props.col ?? 1 }>
+    return <GridItem colSpan={ props.col ?? 1 } role="grid-container">
         <Textfield { ...field } disabled={ isSubmitting } error={ error } { ...props }  />
     </GridItem>
 })
