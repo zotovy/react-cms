@@ -64,9 +64,12 @@
             }
 
             span.formSubtitle {
-                text-align: center;
                 color: var(--untitled-gray--400);
                 @include untitled-text-text-md-normal();
+                
+                @include lt-lg {
+                    text-align: center;
+                }
             }
 
             .checkbox {
