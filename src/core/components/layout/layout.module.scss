@@ -4,6 +4,11 @@
     display: flex;
     width: 100vw;
     max-height: 100vh;
+    
+    &[data-variant="full-width"] .editView {
+        padding: 0;
+        max-width: initial;
+    }
 
     .editView {
         width: 100%;

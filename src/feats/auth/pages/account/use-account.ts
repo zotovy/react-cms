@@ -10,6 +10,7 @@ export function useAccount() {
     const dispatch = useAppDispatch()
 
     return {
+        user,
         formik: createFormik({
             onSubmit: async (values, { setFieldValue, setFieldTouched }) => {
                 await dispatch(updateUser(values))

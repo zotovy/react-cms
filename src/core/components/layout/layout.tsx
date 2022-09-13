@@ -8,15 +8,14 @@ import { NavBar } from "@core/components/navbar/navbar";
 type Props = {
     className?: string,
     children: React.ReactNode,
-    page: string,
+    variant?: "default" | "full-width",
 }
 
 export const Layout: React.FC<Props> = (props) => {
-    return <div className={ styles.layout }>
+    return <div className={ styles.layout } data-variant={ props.variant ?? 'default' }>
         <Sidebar { ...config } key="core/sidebar"/>
         <div className={ styles.editView }>
             <NavBar/>
-            <h1>{ props.page }</h1>
             <div className={ classNames(styles.content, props.className) }>
                 { props.children }
             </div>

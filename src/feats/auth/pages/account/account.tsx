@@ -2,45 +2,63 @@ import React from "react";
 import { Layout } from "@core/components/layout/layout";
 import { useAccount } from "@feats/auth/pages/account/use-account";
 import { Form, Formik } from "formik";
-import styles from "@feats/auth/pages/account/account.module.scss";
-import { FormInput } from "@core/components/inputs/form/form-input";
-import { GridItem, SimpleGrid, Spacer } from "@chakra-ui/react";
-import { FormPasswordInput } from "@core/components/inputs/form/form-password-input";
-import { SubmitButton } from "@core/components/buttons/form/submit-button";
-import { ResetButton } from "@core/components/buttons/form/reset-button";
-import { FormTextArea } from "@core/components/inputs/form/form-textarea";
-import { EditableAvatar } from "@core/components/avatar/editable-avatar/editable-avatar";
+import styles from "./account.module.scss";
+import { Avatar, Badge, Button, Tab, TabList, TabPanel, Tabs } from "react-untitled-ui";
+import { fullName } from "@feats/auth/entities";
+import { UserPlus } from "react-feather";
+import { PersonalInfo } from "@feats/auth/pages/account/tabs/personal-info/personal-info";
 
 export const AccountPage: React.FC = () => {
-    const {formik} = useAccount()
+    const {formik, user} = useAccount()
 
-    return <Layout page="Account settings">
+    return <Layout variant="full-width">
+        <header className={ styles.header }>
+            <img
+                draggable={ false }
+                className={ styles.gradient }
+                src="/gradient/gradient-1.png" alt=""/>
+            <div className={ styles.userContainer }>
+                <Avatar size="lg" className={ styles.avatar }/>
+                <div className={ styles.userContent }>
+                    <div className={ styles.userDetails }>
+                        <h1>{ fullName(user) }</h1>
+                        <span className={ styles.email }>{ user?.email }</span>
+                    </div>
+                    <div className={ styles.userActions }>
+                        <Button
+                            variant="secondary-gray"
+                            trailingIcon={ UserPlus }>
+                            Share
+                        </Button>
+                        <Button>
+                            View profile
+                        </Button>
+                    </div>
+                </div>
+            </div>
+            <div className={ styles.tabs }>
+                <Tabs>
+                    <TabList>
+                        <Tab>Personal info</Tab>
+                        <Tab>Password</Tab>
+                        <Tab>Team <Badge>4</Badge></Tab>
+                        <Tab>Plan</Tab>
+                        <Tab>Billing <Badge>4</Badge></Tab>
+                        <Tab>Email</Tab>
+                        <Tab>Integrations</Tab>
+                        <Tab>API</Tab>
+                    </TabList>
+
+                    <div className={ styles.content }>
+                        <TabPanel><PersonalInfo/></TabPanel>
+                    </div>
+                </Tabs>
+            </div>
+        </header>
+
         <Formik { ...formik }>
             <Form className={ styles.account }>
-                <SimpleGrid columns={ {md: 2, sm: 1} } columnGap={ 10 } rowGap={ 4 }>
-                    <h3>Profile information</h3>
-                    <FormInput label="First name" name="firstName"/>
-                    <FormInput label="Last name" name="lastName"/>
-                    <FormInput label="Email" name="email"/>
-                    <FormInput label="Username" name="username"/>
-                    <FormTextArea label="Bio" name="bio" col={{md: 2, sm: 1}}/> 
 
-                    <h3>Profile image</h3>
-                    <GridItem colSpan={{md: 2, sm: 1}} className={styles.profileImage}>
-                        <EditableAvatar/>
-                    </GridItem>
-                    
-                    <h3>Security</h3>
-                    <FormPasswordInput label="Current Password" name="currentPassword"/>
-                    <Spacer/>
-                    <FormPasswordInput label="New password" name="password"/>
-                    <FormPasswordInput label="Confirm password" name="confirmPassword"/>
-                
-                    <GridItem colSpan={{md: 2, sm: 1}}>
-                        {/*<SubmitButton minW="100px">Save</SubmitButton>*/}
-                        <ResetButton minW="100px">Reset</ResetButton>
-                    </GridItem>
-                </SimpleGrid>
             </Form>
         </Formik>
     </Layout>

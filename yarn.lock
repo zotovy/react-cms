@@ -3925,6 +3925,11 @@ cliui@^7.0.2:
     strip-ansi "^6.0.0"
     wrap-ansi "^7.0.0"
 
+clsx@^1.1.0:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.2.1.tgz#0ddc4a20a549b59c93a4116bb26f5294ca17dc12"
+  integrity sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==
+
 co@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/co/-/co-4.6.0.tgz#6ea6bdf3d853ae54ccb8e47bfa0bf3f9031fb184"
@@ -8218,7 +8223,7 @@ prompts@^2.0.1, prompts@^2.4.2:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.6.2, prop-types@^15.7.2, prop-types@^15.8.1:
+prop-types@^15.5.0, prop-types@^15.6.2, prop-types@^15.7.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -8546,10 +8551,18 @@ react-style-singleton@^2.2.1:
     invariant "^2.2.4"
     tslib "^2.0.0"
 
-react-untitled-ui@^0.0.16:
-  version "0.0.16"
-  resolved "https://registry.yarnpkg.com/react-untitled-ui/-/react-untitled-ui-0.0.16.tgz#f32574ae84022adc7fdf2ac1ba720869a49ca373"
-  integrity sha512-x2L2xQTiwzseMj26jRoJ32pLetyTaWbsW738I1qzivZ6HhObKmYKMYJw/uf3BXQB6JmGKQv/uWb8BQyERvFZOA==
+react-tabs@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/react-tabs/-/react-tabs-5.1.0.tgz#5ef8fad015c71c23b0fff65bd9b3bd419219c27b"
+  integrity sha512-jsPVEPuhG7JljTo8Q4ujz4UKRpG90nHlDClAdvV5KrLxCHU+MT/kg7dmhq8fDv8+frciDtaYeFFlTVRLm4N5AQ==
+  dependencies:
+    clsx "^1.1.0"
+    prop-types "^15.5.0"
+
+react-untitled-ui@^0.0.19:
+  version "0.0.19"
+  resolved "https://registry.yarnpkg.com/react-untitled-ui/-/react-untitled-ui-0.0.19.tgz#b0074e7d7b8b9a76b1050c4d10ae5fc7929dcbe8"
+  integrity sha512-YARpXAtxbRfYp7Dl03378kObZcX3aHv2qnakjV2/mLiaJ2W8cJ3P4dnE/PzFTJUf1ZRrCEWBnBXnUjQbZVQRUA==
   dependencies:
     classnames "^2.3.1"
     copy-to-clipboard "^3.3.2"
@@ -8557,6 +8570,7 @@ react-untitled-ui@^0.0.16:
     react-dom "^18.2.0"
     react-feather "^2.0.10"
     react-imask "^6.4.2"
+    react-tabs "^5.1.0"
 
 react@^18.2.0:
   version "18.2.0"
