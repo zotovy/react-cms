@@ -9,6 +9,8 @@ export type User = {
     username?: string,
     profileImage?: string,
     bio?: string,
+    country?: string,
+    timezone?: string,
 }
 
 export type Tokens = {

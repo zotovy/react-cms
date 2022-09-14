@@ -2,6 +2,7 @@
 @import "react-untitled-ui/src/styles/global";
 
 header.header {
+    width: 100%;
 
     img.gradient {
         object-fit: cover;
@@ -16,6 +17,8 @@ header.header {
         display: flex;
         gap: 24px;
         padding: 0 32px;
+        max-width: 1200px;
+        margin: 0 auto;
 
         .avatar {
             width: 160px;
@@ -61,10 +64,21 @@ header.header {
     }
     
     .tabs {
+        width: 100%;
         margin-top: 50px;
         
         .content {
-            padding: 24px 32px;
+            padding: 24px 0;
+            
+            h5 {
+                @include untitled-text-text-lg-semibold;
+                color: var(--untitled-gray--800);
+            }
+            
+            p {
+                @include untitled-text-text-md-normal;
+                color: var(--untitled-gray--500);
+            }
         }
     }
 }

@@ -48,7 +48,7 @@ export const AccountPage: React.FC = () => {
                         <Tab>Integrations</Tab>
                         <Tab>API</Tab>
                     </TabList>
-
+            
                     <div className={ styles.content }>
                         <TabPanel><PersonalInfo/></TabPanel>
                     </div>
