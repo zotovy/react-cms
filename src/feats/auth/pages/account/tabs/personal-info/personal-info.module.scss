@@ -1,15 +1,20 @@
 @import "react-untitled-ui/src/styles/global";
+@import "src/core/styles/globals";
 
 .personalInfo {
     display: flex;
     flex-direction: column;
     gap: 10px;
     
-    .title {
+    .title {    
         width: 100%;
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 32px;
+
+        @include lt-sm {
+            display: none;
+        }
     }
 
     .fieldContainer {
@@ -17,6 +22,10 @@
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 32px;
+
+        @include lt-sm {
+            padding: 0 16px;
+        }
         
         .field {
             display: flex;
@@ -26,11 +35,24 @@
             gap: 24px;
             padding: 10px 0;
 
+            @include lt-sm {
+                flex-direction: column;
+                gap: 6px;
+            }
+
             .fieldLabel {
                 @include untitled-text-text-sm-medium;
                 color: var(--untitled-gray--700);
                 width: 100%;
                 max-width: 35%;
+                
+                @include lt-md {
+                    max-width: 20%;
+                }
+
+                @include lt-sm {
+                    max-width: 100%;
+                }
 
                 span {
                     display: block;
@@ -44,15 +66,28 @@
                 max-width: 512px;
                 display: flex;
                 gap: 24px;
+
+                @include lt-sm {
+                    gap: 20px;
+                }
             }
         }
     }
     
-    .avatar {
-        min-width: 64px;
+    .avatarField {
+        flex-direction: column;
+        margin-top: 14px;
+        
+        .avatar {
+            min-width: 64px;
+        }
     }
     
     .formActions {
         padding: 0 32px;
+
+        @include lt-sm {
+            padding: 0 16px;
+        }
     }
 }

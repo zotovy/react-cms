@@ -11,6 +11,7 @@ import { Form, Formik } from "formik";
 import { FormInput } from "@core/components/inputs/form/form-input";
 import { FormDropdown } from "@core/components/dropdown/form/form-dropdown";
 import { FormTextArea } from "@core/components/inputs/form/form-textarea";
+import MediaQuery from "react-responsive";
 
 export type PersonalInfoProps = {}
 
@@ -27,13 +28,30 @@ export const PersonalInfo: React.FC<PersonalInfoProps> = () => {
                 <Divider/>
 
                 {/* Name */ }
-                <Field>
-                    <FieldLabel>Name</FieldLabel>
-                    <FieldsContainer>
-                        <FormInput placeholder="Enter your first name" name="firstName" fullWidth/>
-                        <FormInput placeholder="Enter your last name" name="lastName" fullWidth/>
-                    </FieldsContainer>
-                </Field>
+                <MediaQuery minWidth={ 576 }>
+                    <Field>
+                        <FieldLabel>Name</FieldLabel>
+                        <FieldsContainer>
+                            <FormInput placeholder="Enter your first name" name="firstName" fullWidth/>
+                            <FormInput placeholder="Enter your last name" name="lastName" fullWidth/>
+                        </FieldsContainer>
+                    </Field>
+                </MediaQuery>
+                <MediaQuery maxWidth={ 575 }>
+                    <Field>
+                        <FieldLabel>First name</FieldLabel>
+                        <FieldsContainer>
+                            <FormInput placeholder="Enter your first name" name="firstName" fullWidth/>
+                        </FieldsContainer>
+                    </Field>
+                    <Divider/>
+                    <Field>
+                        <FieldLabel>Last name</FieldLabel>
+                        <FieldsContainer>
+                            <FormInput placeholder="Enter your last name" name="lastName" fullWidth/>
+                        </FieldsContainer>
+                    </Field>
+                </MediaQuery>
                 <Divider/>
 
                 {/* Email */ }
@@ -68,7 +86,7 @@ export const PersonalInfo: React.FC<PersonalInfoProps> = () => {
                         Your photo
                         <span>This will be displayed on your profile.</span>
                     </FieldLabel>
-                    <FieldsContainer>
+                    <FieldsContainer className={ styles.avatarField }>
                         <Avatar size="2xl" className={ styles.avatar } src={ user?.profileImage }/>
                         <FileUpload className={ styles.fileUpload }/>
                     </FieldsContainer>

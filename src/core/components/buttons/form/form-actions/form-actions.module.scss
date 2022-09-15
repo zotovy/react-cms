@@ -1,3 +1,5 @@
+@import "react-untitled-ui/src/styles/global";
+
 .formActions {
     display: flex;
     width: 100%;
@@ -6,5 +8,9 @@
     
     button {
         min-width: 100px;
+
+        @include lt-sm {
+            min-width: initial;
+        }
     }
 }

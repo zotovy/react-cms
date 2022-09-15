@@ -1,8 +1,10 @@
 import React from "react";
 import styles from "./personal-info.module.scss"
+import classNames from "classnames";
 
 export type Props = {
     children?: React.ReactNode;
+    className?: string;
 }
 
 export const Field: React.FC<Props> = (props) => {
@@ -18,5 +20,10 @@ export const FieldLabel: React.FC<Props> = (props) => {
 }
 
 export const FieldsContainer: React.FC<Props> = (props) => {
-    return <div className={ styles.fields }>{ props.children }</div>
+    const className = classNames(
+        props.className,
+        styles.fields,
+    )
+    
+    return <div className={ className }>{ props.children }</div>
 }

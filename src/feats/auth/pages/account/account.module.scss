@@ -31,14 +31,18 @@ header.header {
                 width: 80px;
                 height: 80px;
             }
+
+            @include lt-md {
+                display: none;
+            }
         }
-        
+
         .userContent {
             display: flex;
             justify-content: space-between;
             margin-top: 64px;
             width: 100%;
-            
+
             .userDetails {
                 h1 {
                     font-weight: 500;
@@ -47,14 +51,14 @@ header.header {
                     color: var(--untitled-gray--900);
                     margin-bottom: 4px;
                 }
-                
+
                 span.email {
                     display: block;
                     font-size: 16px;
                     color: var(--untitled-gray--500);
                 }
             }
-            
+
             .userActions {
                 display: inline-flex;
                 align-items: start;
@@ -62,22 +66,39 @@ header.header {
             }
         }
     }
-    
+
     .tabs {
         width: 100%;
         margin-top: 50px;
-        
+
         .content {
             padding: 24px 0;
-            
+
             h5 {
                 @include untitled-text-text-lg-semibold;
                 color: var(--untitled-gray--800);
             }
-            
+
             p {
                 @include untitled-text-text-md-normal;
                 color: var(--untitled-gray--500);
+            }
+        }
+    }
+}
+
+.mobileContent {
+    @include lt-sm {
+        margin-top: 114px;
+
+        .pageHeader {
+            padding: 0 16px;
+            margin-bottom: 20px;
+
+            h1 {
+                @include untitled-text-display-xs-medium;
+                color: var(--untitled-gray--900);
+                margin-bottom: 24px;
             }
         }
     }
