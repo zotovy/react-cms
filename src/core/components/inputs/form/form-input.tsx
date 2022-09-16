@@ -12,8 +12,6 @@ export const FormInput: React.FC<Props> = React.memo((props) => {
     const [field, meta] = useField(props.name);
     const {isSubmitting} = useFormikContext()
     
-    console.log(props.name, meta)
-
     const error = !!meta.error && meta.touched ? meta.error : undefined
     
     const { col, ...rest } = props

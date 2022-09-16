@@ -39,7 +39,10 @@ export const AccountPage: React.FC = () => {
                     </div>
                 </div>
                 <div className={ styles.tabs }>
-                    <Tabs onSelect={ hook.setActiveTab }>
+                    <Tabs
+                        defaultIndex={ hook.activeTabIndex }
+                        selectedIndex={ hook.activeTabIndex }
+                        onSelect={ hook.handleTabChange }>
                         <TabList>
                             <Tab>Personal info</Tab>
                             <Tab>Password</Tab>
@@ -65,13 +68,13 @@ export const AccountPage: React.FC = () => {
                     <h1>Account</h1>
                     <Dropdown
                         fullWidth
-                        onChange={ hook.handleTabChange }
-                        value={ accountTabs[hook.activeTab] }
+                        onChange={ hook.handleTabChangeByDropdown }
+                        value={ hook.activeTabForDropdown }
                         options={ accountTabs }/>
                 </div>
                 <div className={ styles.content }>
-                    { hook.activeTab === 0 && <PersonalInfo/> }
-                    { hook.activeTab === 1 && <Password/> }
+                    { hook.activeTab === "personal-info" && <PersonalInfo/> }
+                    { hook.activeTab === "password" && <Password/> }
                 </div>
             </div>
         </MediaQuery>

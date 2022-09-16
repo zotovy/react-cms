@@ -1,17 +1,29 @@
 import { useAppSelector } from "@redux/hooks";
 import { selectUser } from "@feats/auth/redux/auth-selectors";
-import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
 export function useAccount() {
     const user = useAppSelector(selectUser)
-    const [activeTab, setActiveTab] = useState(0)
+    const [searchParams, setSearchParams] = useSearchParams();
+    const activeTab = searchParams.get("tab") || "personal-info";
     
+    const handleTabChange = (tab: string) => {
+        console.log(tab)
+        setSearchParams({tab});
+    }
+
     return {
         user,
         activeTab,
-        setActiveTab,
-        handleTabChange: (dropdownOption: any) => {
-            setActiveTab(accountTabs.findIndex(x => x.value === dropdownOption.value))
+        activeTabIndex: accountTabs.findIndex(x => x.value === activeTab),
+        activeTabForDropdown: accountTabs.find(x => x.value === activeTab),
+        handleTabChange: (i: number) => {
+            const tab = accountTabs[i].value;
+            console.log(tab)
+            handleTabChange(tab);
+        },
+        handleTabChangeByDropdown: (dropdownOption: any) => {
+            handleTabChange(dropdownOption.value)
         }
     }
 }
