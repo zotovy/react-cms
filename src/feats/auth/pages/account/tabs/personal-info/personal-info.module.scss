@@ -2,92 +2,12 @@
 @import "src/core/styles/globals";
 
 .personalInfo {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    
-    .title {    
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 32px;
-
-        @include lt-sm {
-            display: none;
-        }
-    }
-
-    .fieldContainer {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 32px;
-
-        @include lt-sm {
-            padding: 0 16px;
-        }
-        
-        .field {
-            display: flex;
-            align-items: start;
-            width: 100%;
-            max-width: 824px;
-            gap: 24px;
-            padding: 10px 0;
-
-            @include lt-sm {
-                flex-direction: column;
-                gap: 6px;
-            }
-
-            .fieldLabel {
-                @include untitled-text-text-sm-medium;
-                color: var(--untitled-gray--700);
-                width: 100%;
-                max-width: 35%;
-                
-                @include lt-md {
-                    max-width: 20%;
-                }
-
-                @include lt-sm {
-                    max-width: 100%;
-                }
-
-                span {
-                    display: block;
-                    @include untitled-text-text-sm-normal;
-                    color: var(--untitled-gray--500);
-                }
-            }
-
-            .fields {
-                width: 100%;
-                max-width: 512px;
-                display: flex;
-                gap: 24px;
-
-                @include lt-sm {
-                    gap: 20px;
-                }
-            }
-        }
-    }
-    
     .avatarField {
         flex-direction: column;
         margin-top: 14px;
         
         .avatar {
             min-width: 64px;
-        }
-    }
-    
-    .formActions {
-        padding: 0 32px;
-
-        @include lt-sm {
-            padding: 0 16px;
         }
     }
 }

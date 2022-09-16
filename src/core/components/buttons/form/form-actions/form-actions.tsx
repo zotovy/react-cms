@@ -5,12 +5,14 @@ import { SubmitButton } from "@core/components/buttons/form/submit-button";
 import classNames from "classnames";
 
 export type FormActionsProps = {
-    className?: string
+    className?: string;
+    resetText?: string;
+    submitText?: string;
 }
 
 export const FormActions: React.FC<FormActionsProps> = (props) => {
     return <div className={ classNames(styles.formActions, props.className) }>
-        <ResetButton size="md">Reset</ResetButton>
-        <SubmitButton size="md">Save</SubmitButton>
+        <ResetButton size="md">{ props.resetText ?? "Reset" }</ResetButton>
+        <SubmitButton size="md">{ props.submitText ?? "Save" }</SubmitButton>
     </div>
 }

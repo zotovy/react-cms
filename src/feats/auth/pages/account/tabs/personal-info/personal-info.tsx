@@ -2,12 +2,18 @@ import React from "react";
 import styles from "./personal-info.module.scss"
 import { Avatar, Divider, FileUpload } from "react-untitled-ui";
 import { Clock, Mail } from "react-feather";
-import { Field, FieldLabel, FieldsContainer } from "@feats/auth/pages/account/tabs/personal-info/field";
+import {
+    Field,
+    FieldLabel,
+    FieldsContainer,
+    PageContainer,
+    Title,
+    FormActions
+} from "@feats/auth/pages/account/fields/fields";
 import { availableCountries } from "@config/countries";
 import { timezones } from "@config/timezones";
-import { FormActions } from "@core/components/buttons/form/form-actions/form-actions";
 import { usePersonalInfo } from "@feats/auth/pages/account/tabs/personal-info/use-personal-info";
-import { Form, Formik } from "formik";
+import { Formik } from "formik";
 import { FormInput } from "@core/components/inputs/form/form-input";
 import { FormDropdown } from "@core/components/dropdown/form/form-dropdown";
 import { FormTextArea } from "@core/components/inputs/form/form-textarea";
@@ -19,12 +25,12 @@ export const PersonalInfo: React.FC<PersonalInfoProps> = () => {
     const {formik, user} = usePersonalInfo()
 
     return <Formik { ...formik }>
-        <Form>
-            <div className={ styles.personalInfo }>
-                <div className={ styles.title }>
+        <div className={ styles.personalInfo }>
+            <PageContainer>
+                <Title>
                     <h5>Personal info</h5>
                     <p>Edit your photo and personal details</p>
-                </div>
+                </Title>
                 <Divider/>
 
                 {/* Name */ }
@@ -136,8 +142,8 @@ export const PersonalInfo: React.FC<PersonalInfoProps> = () => {
                 <Divider/>
 
                 {/* Actions */ }
-                <FormActions className={ styles.formActions }/>
-            </div>
-        </Form>
+                <FormActions/>
+            </PageContainer>
+        </div>
     </Formik>
 }
