@@ -1,5 +1,5 @@
 import { useAppSelector } from "@redux/hooks";
-import { selectUser } from "@feats/auth/redux/auth-selectors";
+import { selectUser } from "@feats/auth/redux/auth/auth-selectors";
 import { useSearchParams } from "react-router-dom";
 
 export function useAccount() {

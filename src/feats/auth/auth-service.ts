@@ -1,5 +1,5 @@
-import { LoginArgs } from "@feats/auth/redux/auth-actions";
-import { LoginStatus } from "@feats/auth/redux/state";
+import { LoginArgs } from "@feats/auth/redux/auth/auth-actions";
+import { LoginStatus } from "@feats/auth/redux/auth/auth-state";
 import { wait } from "@core/utils/wait";
 import LocalStorage from "@core/services/local-storage";
 
@@ -11,13 +11,16 @@ export default class AuthService {
         if (arg.email === "admin@gmail.com" && arg.password === "12345") {
             return {
                 user: {
+                    id: "1",
                     email: "admin@gmail.com",
                     firstName: "Roman",
                     lastName: "Shchurov",
                     bio: "Hi! I'm example account",
                     username: "163onmyneck",
                     permissions: ["dashboard"],
-                    role: "admin"
+                    role: "admin",
+                    lastActiveAt: new Date(),
+                    createdAt: new Date(),
                 },
                 tokens: {
                     access: "123.123.123",

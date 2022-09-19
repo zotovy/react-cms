@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { AuthState } from "@feats/auth/redux/state";
-import { login, updateUser } from "@feats/auth/redux/auth-actions";
+import { AuthState } from "@feats/auth/redux/auth/auth-state";
+import { login, updateUser } from "@feats/auth/redux/auth/auth-actions";
 import LocalStorage from "@core/services/local-storage";
 import AuthService from "@feats/auth/auth-service";
 

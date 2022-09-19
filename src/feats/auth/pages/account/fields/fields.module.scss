@@ -27,6 +27,7 @@
             @include untitled-text-text-sm-medium;
             color: var(--untitled-gray--700);
             width: 100%;
+            min-width: 100px;
             max-width: 35%;
 
             @include lt-md {
@@ -62,6 +63,12 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 32px;
+    
+    &.table {
+        @include lt-xl {
+            margin-bottom: 10px;
+        }
+    }
 
     @include lt-sm {
         display: none;
@@ -72,6 +79,25 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+
+    &.table .fieldContainer {
+        .field, .fields {
+            max-width: initial;
+        }
+        
+        .field {
+            @include lt-xl {
+                flex-direction: column;
+                gap: 24px;
+            }
+        }
+        
+        .fieldLabel {
+            @include lt-xl {
+                max-width: 100%;
+            }
+        }
+    }
 
     .formActions {
         padding: 0 32px;

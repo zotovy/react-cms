@@ -1,6 +1,6 @@
 import { Permission } from "@feats/auth/entities";
 import { useAppSelector } from "@redux/hooks";
-import { selectUserPermissions } from "@feats/auth/redux/auth-selectors";
+import { selectUserPermissions } from "@feats/auth/redux/auth/auth-selectors";
 
 export function useHasPermission(permission: Permission | Permission[]) {
     const userPermissions = useAppSelector(selectUserPermissions)

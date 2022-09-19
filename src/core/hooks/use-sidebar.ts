@@ -8,9 +8,9 @@ import {
     toggle, toggleExpand
 } from "@core/redux/sidebar-reducer";
 import { useSelector } from "react-redux";
-import { selectUser } from "@feats/auth/redux/auth-selectors";
+import { selectUser } from "@feats/auth/redux/auth/auth-selectors";
 import { useNavigate } from "react-router-dom";
-import { logout } from "@feats/auth/redux/auth-reducer";
+import { logout } from "@feats/auth/redux/auth/auth-reducer";
 import { ContainerNavPage, isContainerNavPage, NavPage } from "@core/types/layout";
 import useCollapse from "react-collapsed";
 import { useMediaQuery } from "react-untitled-ui";

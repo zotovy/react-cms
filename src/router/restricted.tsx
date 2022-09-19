@@ -1,6 +1,6 @@
 import React from "react";
 import { useAppSelector } from "@redux/hooks";
-import { selectIsAuthorized, selectUserPermissions } from "@feats/auth/redux/auth-selectors";
+import { selectIsAuthorized } from "@feats/auth/redux/auth/auth-selectors";
 import { Navigate } from "react-router";
 import { getHomeRoute } from "./routes";
 import { Permission } from "@feats/auth/entities";

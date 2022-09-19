@@ -8,6 +8,7 @@ import { UserPlus } from "react-feather";
 import { PersonalInfo } from "@feats/auth/pages/account/tabs/personal-info/personal-info";
 import MediaQuery from "react-responsive";
 import { Password } from "@feats/auth/pages/account/tabs/password/password";
+import { Team } from "@feats/auth/pages/account/tabs/team/team";
 
 export const AccountPage: React.FC = () => {
     const hook = useAccount()
@@ -57,6 +58,7 @@ export const AccountPage: React.FC = () => {
                         <div className={ styles.content }>
                             <TabPanel><PersonalInfo/></TabPanel>
                             <TabPanel><Password/></TabPanel>
+                            <TabPanel><Team/></TabPanel>
                         </div>
                     </Tabs>
                 </div>
@@ -75,6 +77,7 @@ export const AccountPage: React.FC = () => {
                 <div className={ styles.content }>
                     { hook.activeTab === "personal-info" && <PersonalInfo/> }
                     { hook.activeTab === "password" && <Password/> }
+                    { hook.activeTab === "team" && <Team/> }
                 </div>
             </div>
         </MediaQuery>

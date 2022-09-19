@@ -1,5 +1,5 @@
 import AuthService from "@feats/auth/auth-service";
-import { AuthState, ErrorLoginStatus, isAuthorizedAuthState } from "@feats/auth/redux/state";
+import { AuthState, ErrorLoginStatus, isAuthorizedAuthState } from "@feats/auth/redux/auth/auth-state";
 import LocalStorage from "@core/services/local-storage";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { User } from "@feats/auth/entities";

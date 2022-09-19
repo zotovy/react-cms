@@ -1,7 +1,7 @@
 import { createFormik } from "@core/utils/ui/create-formik";
 import { useAppDispatch, useAppSelector } from "@redux/hooks";
-import { selectUser } from "@feats/auth/redux/auth-selectors";
-import { updateUser } from "@feats/auth/redux/auth-actions";
+import { selectUser } from "@feats/auth/redux/auth/auth-selectors";
+import { updateUser } from "@feats/auth/redux/auth/auth-actions";
 import { countryByValue } from "@config/countries";
 import { timezoneByValue } from "@config/timezones";
 import * as yup from "yup";

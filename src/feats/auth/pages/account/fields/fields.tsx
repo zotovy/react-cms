@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./fields.module.scss"
 import classNames from "classnames";
-import { Form } from "formik";
 import {
     FormActions as CoreFormActions,
     FormActionsProps
@@ -10,16 +9,35 @@ import {
 export type Props = {
     children?: React.ReactNode;
     className?: string;
+    type?: PageType;
 }
 
+type PageType = "default" | "table"
+
 export const PageContainer: React.FC<Props> = (props) => {
-    return <Form className={ styles.pageContainer }>
+    const className = classNames(
+        props.className,
+        styles.pageContainer,
+        {
+            [styles.table]: props.type === "table",
+        }
+    )
+
+    return <div className={ className }>
         { props.children }
-    </Form>
+    </div>
 }
 
 export const Title: React.FC<Props> = (props) => {
-    return <div className={ styles.title }>
+    const className = classNames(
+        props.className,
+        styles.title,
+        {
+            [styles.table]: props.type === "table",
+        }
+    )
+    
+    return <div className={ className }>
         { props.children }
     </div>
 }
@@ -47,5 +65,5 @@ export const FieldsContainer: React.FC<Props> = (props) => {
 
 
 export const FormActions: React.FC<FormActionsProps> = (props) => {
-    return <CoreFormActions className={ styles.formActions } {...props}/>
+    return <CoreFormActions className={ styles.formActions } { ...props }/>
 }

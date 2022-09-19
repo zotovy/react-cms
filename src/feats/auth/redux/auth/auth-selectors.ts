@@ -1,5 +1,5 @@
 import { RootState } from "@redux/store";
-import { isAuthorizedAuthState } from "@feats/auth/redux/state";
+import { isAuthorizedAuthState } from "@feats/auth/redux/auth/auth-state";
 import { Permission, User } from "@feats/auth/entities";
 
 export const selectUserPermissions = ({ auth }: RootState): Permission[] => {
