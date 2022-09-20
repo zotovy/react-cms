@@ -48,11 +48,6 @@ export const AccountPage: React.FC = () => {
                             <Tab>Personal info</Tab>
                             <Tab>Password</Tab>
                             <Tab>Team <Badge>4</Badge></Tab>
-                            <Tab>Plan</Tab>
-                            <Tab>Billing <Badge>4</Badge></Tab>
-                            <Tab>Email</Tab>
-                            <Tab>Integrations</Tab>
-                            <Tab>API</Tab>
                         </TabList>
 
                         <div className={ styles.content }>

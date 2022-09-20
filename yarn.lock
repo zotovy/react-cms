@@ -8788,10 +8788,10 @@ react-tabs@^5.1.0:
     clsx "^1.1.0"
     prop-types "^15.5.0"
 
-react-untitled-ui@^0.0.37:
-  version "0.0.37"
-  resolved "https://registry.yarnpkg.com/react-untitled-ui/-/react-untitled-ui-0.0.37.tgz#03ed6193e99dc41db8c1072f1590ea60078c9a89"
-  integrity sha512-GS54WvuaAbeefDc/d9IIU1dOInvq2s1HaOop1p4maMnZU6Sty+CpZCRaR8DG6CWIb8VqJ6juQKhhqWryAyy67Q==
+react-untitled-ui@^0.0.38:
+  version "0.0.38"
+  resolved "https://registry.yarnpkg.com/react-untitled-ui/-/react-untitled-ui-0.0.38.tgz#c02cdcb29d9d57c9db0717ec1d61bd0f4caf4c50"
+  integrity sha512-9XUYDMuQg9eKb/dN36L/04yQC3WksF5i4by15LWOZQdgFPpOveIbwHyqsDxYketxHNyjfT+WcX5OkTHogZPJIw==
   dependencies:
     "@react-hook/resize-observer" "^1.2.6"
     classnames "^2.3.1"
