@@ -36,7 +36,7 @@ export const Title: React.FC<Props> = (props) => {
             [styles.table]: props.type === "table",
         }
     )
-    
+
     return <div className={ className }>
         { props.children }
     </div>

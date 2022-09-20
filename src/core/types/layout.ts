@@ -9,7 +9,7 @@ export type NavPage = {
 }
 
 export function isNavPage(x: any): x is NavPage {
-    return x.type === "page";
+    return x.type === "page" && !x.children;
 }
 
 export type ContainerNavPage = Omit<NavPage, "url"> & {

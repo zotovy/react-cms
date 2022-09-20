@@ -8,7 +8,6 @@ export function useAccount() {
     const activeTab = searchParams.get("tab") || "personal-info";
     
     const handleTabChange = (tab: string) => {
-        console.log(tab)
         setSearchParams({tab});
     }
 

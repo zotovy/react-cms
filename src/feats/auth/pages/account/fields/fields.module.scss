@@ -1,5 +1,14 @@
 @import "react-untitled-ui/src/styles/global";
 
+@mixin loading {
+    color: var(--untitled-gray--50) !important;
+    background-color: var(--untitled-gray--50);
+    border-radius: 5px;
+    display: inline-block;
+    width: 100%;
+    height: 24px;
+}
+
 .fieldContainer {
     width: 100%;
     max-width: 1200px;

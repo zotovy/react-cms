@@ -8,10 +8,16 @@ import { useTeam } from "@feats/auth/pages/account/tabs/team/use-team";
 export type TeamProps = {}
 
 export const Team: React.FC<TeamProps> = () => {
-    const { isLoading, data } = useTeam()
-    
-    if (isLoading) return <div>Loading...</div>
-    
+    const {isLoading, data} = useTeam()
+
+    if (isLoading) return <PageContainer type="table">
+        <Title type="table">
+            <h5>Team members</h5>
+            <p>Manage your teams members and their account permissions here.</p>
+        </Title>
+        <Divider/>
+    </PageContainer>
+
     return <PageContainer type="table">
         <Title type="table">
             <h5>Team members</h5>

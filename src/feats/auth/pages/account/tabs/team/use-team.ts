@@ -3,19 +3,7 @@ import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 
 export function useTeam() {
-    const data = useQuery(["teams"], async () => {
-        const users = await Promise.all([
-            fetchUsers(3),
-            fetchUsers(6),
-            fetchUsers(5),
-        ])
-
-        return {
-            admins: users[0],
-            moderators: users[1],
-            translators: users[2],
-        }
-    }, {
+    const data = useQuery(["teams"], fetchTeams, {
         refetchOnMount: false,
         refetchOnWindowFocus: false,
         refetchInterval: Infinity,
@@ -44,4 +32,18 @@ async function fetchUsers(amount: number = 5): Promise<User[]> {
         createdAt: new Date(),
         lastActiveAt: new Date(),
     }) as User)
+}
+
+export async function fetchTeams() {
+    const users = await Promise.all([
+        fetchUsers(3),
+        fetchUsers(6),
+        fetchUsers(5),
+    ])
+
+    return {
+        admins: users[0],
+        moderators: users[1],
+        translators: users[2],
+    }
 }

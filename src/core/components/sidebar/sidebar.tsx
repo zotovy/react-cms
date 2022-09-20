@@ -80,10 +80,11 @@ export const SidebarItem: React.FC<(NavPage | ContainerNavPage) & { itemKey: str
         activeChildren,
         handleItemClick,
     } = useSidebarItem(props as ContainerNavPage, props.itemKey)
-
+    
+    const Container = isNavPage(props) ? Link : "div"
 
     return <div className={ styles.navItemContainer }>
-        <Link
+        <Container
             { ...getToggleProps() }
             to={ isNavPage(props) ? props.url : "#" }
             className={ styles.navItem }
@@ -99,7 +100,7 @@ export const SidebarItem: React.FC<(NavPage | ContainerNavPage) & { itemKey: str
                     </div>
                 }
             </div>
-        </Link>
+        </Container>
         <div { ...getCollapseProps() } className={ styles.navChildren }>
             {
                 isContainerNavPage(props) && props.children.map((item: SubNavPage, i) => {
