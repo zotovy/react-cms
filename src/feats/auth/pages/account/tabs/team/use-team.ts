@@ -15,7 +15,12 @@ export function useTeam() {
             moderators: users[1],
             translators: users[2],
         }
-    }, {refetchOnMount: false})
+    }, {
+        refetchOnMount: false,
+        refetchOnWindowFocus: false,
+        refetchInterval: Infinity,
+        cacheTime: Infinity,
+    })
 
     return {
         ...data

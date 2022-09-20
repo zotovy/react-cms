@@ -1,27 +1,55 @@
 @import "src/core/styles/animations";
+@import "react-untitled-ui/src/styles/global";
 
 .page404 {
-    width: 100vw;
-    height: 100vh;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 36px;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+
+    @include lt-sm {
+        padding: 0 16px;
+    }
+    
+    .subhead {
+        color: var(--untitled-primary--700);
+        @include untitled-text-text-sm-semibold;
+        margin-bottom: 12px;
+
+        @include lt-sm {
+            @include untitled-text-text-md-semibold;
+        }
+    }
     
     h1 {
-        font-family: var(--chakra-fonts-heading);
-        font-weight: var(--chakra-fontWeights-bold);
-        font-size: var(--chakra-fontSizes-6xl);
-        animation: 2s baseFadeAnimation ease;
+        color: var(--untitled-gray--900);
+        @include untitled-text-display-xl-bold;
+        margin-bottom: 16px;
+
+        @include lt-sm {
+            @include untitled-text-display-md-semibold;
+        }
     }
     
-    p {
-        margin-top: var(--chakra-space-4);
-        @include animateBaseFade;
+    .support {
+        color: var(--untitled-gray--600);
+        @include untitled-text-text-xl-normal   ;
+        margin-bottom: 32px;
+        
+        @include lt-sm {
+            @include untitled-text-text-lg-normal;
+        }
     }
     
-    button {
-        margin-top: var(--chakra-space-4);
-        @include animateBaseFade;
+    .buttons {
+        display: inline-flex;
+        gap: 12px;
+
+        @include lt-sm {
+            flex-direction: column;
+        }
     }
 }

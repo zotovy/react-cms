@@ -27,7 +27,7 @@ root.render(
                         <App/>
                     </BrowserRouter>
                 </ChakraProvider>
-                <ReactQueryDevtools/>
+                <ReactQueryDevtools position="bottom-right" initialIsOpen={false}/>
             </QueryClientProvider>
         </ReduxProvider>
     </React.StrictMode>
