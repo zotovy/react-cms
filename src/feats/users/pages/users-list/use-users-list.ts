@@ -1,5 +1,7 @@
 import React, { createContext, useContext, useState } from "react";
 import { DropdownOption } from "react-untitled-ui/src/components/Dropdown/Dropdown";
+import { useQuery } from "@tanstack/react-query";
+import { fetchUsers } from "../../../../api/fetch-users";
 
 interface IUserListContext {
     search: string;
@@ -16,8 +18,16 @@ export function useUsersList() {
     const [search, setSearch] = useState("");
     const [role, setRole] = useState<DropdownOption>({label: "All", value: ""});
     const [status, setStatus] = useState<DropdownOption>({label: "All", value: ""});
+    
+    const query = useQuery(["users"], () => fetchUsers(100), {
+        refetchOnMount: false,
+        refetchOnWindowFocus: false,
+        refetchInterval: Infinity,
+        cacheTime: Infinity,
+    })
 
     return {
+        query,
         context: {
             search,
             setSearch,
