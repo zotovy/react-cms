@@ -1,5 +1,5 @@
 import { SidebarConfig } from "@core/types/layout";
-import { User, Users } from "react-feather";
+import { Dribbble, User, Users } from "react-feather";
 import React from "react";
 import { v4 } from "uuid";
 
@@ -17,6 +17,13 @@ export const sidebarConfig: SidebarConfig = {
             icon: <Users/>,
             text: "User list",
             url: "/apps/users/list",
+            key: v4(),
+        },
+        {
+            type: "page",
+            icon: <Dribbble/>,
+            text: "Components",
+            url: "/apps/components",
             key: v4(),
         },
     ],

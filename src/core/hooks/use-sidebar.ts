@@ -66,13 +66,19 @@ export function useSidebarItem(props: NavPage | ContainerNavPage, key: string) {
         hasChildren: isContainerNavPage(props) ? (props.children?.length ?? 0) > 0 : false,
         collapsed: !isExpanded,
         getCollapseProps,
-        getToggleProps: () => getToggleProps({onClick: () => dispatch(toggleExpand(key))}),
+        getToggleProps: () => getToggleProps({
+            onClick: isContainerNavPage(props)
+                ? () => dispatch(toggleExpand(key))
+                : undefined
+        }),
         active: isContainerNavPage(props)
             ? props.children?.some(x => window.location.href.includes(x.url)) ?? false
             : window.location.href.includes(props.url),
-        activeChildren: isContainerNavPage(props) 
+        activeChildren: isContainerNavPage(props)
             ? props.children.findIndex(x => window.location.href.includes(x.url))
             : undefined,
-        handleItemClick: () => isMobile && dispatch(toggle()),
+        handleItemClick: () => {
+            if (isMobile) dispatch(toggle());
+        },
     }
 }

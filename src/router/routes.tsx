@@ -3,6 +3,7 @@ import { Page404 } from "./404/404";
 import { authRoutes } from "@feats/auth/routes";
 import AuthService from "@feats/auth/auth-service";
 import { Route } from "./router";
+import { libraryRoutes } from "@feats/library/routes";
 
 export const routes: Route[] = [
     {
@@ -11,6 +12,7 @@ export const routes: Route[] = [
     },
     ...authRoutes,
     ...usersRoutes,
+    ...libraryRoutes,
 ]
 
 export function getHomeRoute(): string {
