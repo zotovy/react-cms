@@ -7,6 +7,7 @@ import { Badges } from "@feats/library/pages/badges/badges";
 import { Dropdowns } from "@feats/library/pages/dropdown/dropdowns";
 import { Toggles } from "@feats/library/pages/toggles/toggles";
 import { Checkboxes } from "@feats/library/pages/checkboxes/checkboxes";
+import { Avatars } from "@feats/library/pages/avatars/avatars";
 
 export const libraryRoutes: Route[] = [
     {
@@ -40,5 +41,9 @@ export const libraryRoutes: Route[] = [
     {
         path: "/apps/components/checkboxes",
         page: <Checkboxes/>
+    },
+    {
+        path: "/apps/components/avatars",
+        page: <Avatars/>
     },
 ]
