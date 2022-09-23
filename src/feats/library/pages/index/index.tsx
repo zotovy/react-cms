@@ -41,6 +41,12 @@ export const IndexLibrary: React.FC = () => {
                 link="/apps/components/dropdowns"
                 image="/images/previews/dropdowns.png"
                 description="6 components + 79 variants"/>
+
+            <Card
+                title="Toggles"
+                link="/apps/components/toggles"
+                image="/images/previews/toggles.png"
+                description="2 components + 64 variants"/>
         </div>
     </Layout>
 }

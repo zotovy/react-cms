@@ -5,6 +5,7 @@ import { InputsPreview } from "@feats/library/pages/inputs/inputs";
 import { ButtonGroups } from "@feats/library/pages/button-groups/button-groups";
 import { Badges } from "@feats/library/pages/badges/badges";
 import { Dropdowns } from "@feats/library/pages/dropdown/dropdowns";
+import { Toggles } from "@feats/library/pages/toggles/toggles";
 
 export const libraryRoutes: Route[] = [
     {
@@ -30,5 +31,9 @@ export const libraryRoutes: Route[] = [
     {
         path: "/apps/components/dropdowns",
         page: <Dropdowns/>
+    },
+    {
+        path: "/apps/components/toggles",
+        page: <Toggles/>
     },
 ]
