@@ -2,13 +2,14 @@ import React from "react";
 import styles from "./index.module.scss";
 import { Link } from "react-router-dom";
 import { Layout } from "@core/components/layout/layout";
-import { DefaultHeader } from "@core/components/sections/headers/default/default";
+import { PreviewHeader } from "@core/components/sections/headers/preview/preview";
 
 export const IndexLibrary: React.FC = () => {
     return <Layout>
-        <DefaultHeader 
+        <PreviewHeader 
+            badge="UI Library"
             title="Component library"
-            subtitle="Icons, styles, design annotations— everything you need to build the foundation of a great design system."/>
+            subtitle="Buttons, inputs, avatars — all of the base components you need for modern dashboard design"/>
         
         <div className={ styles.indexPage }>
             {/* Buttons */}
