@@ -25,6 +25,12 @@ export const IndexLibrary: React.FC = () => {
                 description="2 components + 35 variants"/>
 
             <Card
+                title="Badges"
+                link="/apps/components/badges"
+                image="/images/previews/badges.png"
+                description="3 components + 380 variants"/>
+
+            <Card
                 title="Inputs"
                 link="/apps/components/inputs"
                 image="/images/previews/inputs.png"
