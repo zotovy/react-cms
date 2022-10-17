@@ -15,14 +15,6 @@
         @include untitled-text-text-md-normal;
         margin-top: 4px;
         grid-column: span 7;
-        
-        code {
-            padding: 0.1rem 0.4rem;
-            background-color: var(--untitled-blue-gray--50);
-            border-radius: 0.1785rem;
-            font-size: 90%;
-            color: var(--untitled-primary--700);
-        }
     }
     
     .componentsShowcase {

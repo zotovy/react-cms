@@ -9,6 +9,7 @@ import { Toggles } from "@feats/library/pages/toggles/toggles";
 import { Checkboxes } from "@feats/library/pages/checkboxes/checkboxes";
 import { Avatars } from "@feats/library/pages/avatars/avatars";
 import { ColorStyles } from "@feats/library/pages/color-styles/color-styles";
+import { Typography } from "@feats/library/pages/typography/typography";
 
 export const libraryRoutes: Route[] = [
     {
@@ -50,5 +51,9 @@ export const libraryRoutes: Route[] = [
     {
         path: "/apps/components/color-styles",
         page: <ColorStyles/>
+    },
+    {
+        path: "/apps/components/typography",
+        page: <Typography/>
     },
 ]

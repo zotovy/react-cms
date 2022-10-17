@@ -19,6 +19,12 @@ export const IndexLibrary: React.FC = () => {
                 image="/images/previews/color-styles.png"
                 description="333 styles"/>
             
+            <Card
+                title="Typography"
+                link="/apps/components/typography"
+                image="/images/previews/typography.png"
+                description="44 styles"/>
+            
             <div className={ styles.divider }></div>
 
             <Card

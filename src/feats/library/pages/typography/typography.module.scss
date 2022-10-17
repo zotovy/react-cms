@@ -1,0 +1,222 @@
+@import "react-untitled-ui/src/styles/mixins";
+
+.fontName {
+    @include untitled-text-display-sm-medium;
+    color: var(--untitled-gray--900);
+}
+
+.fontLettersPreview {
+    @include untitled-text-text-lg-medium;
+    color: var(--untitled-gray--700);
+    margin-top: 28px;
+}
+
+.fontGroup {
+    width: 100%;
+    display: flex;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--untitled-gray--300);
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 72px;
+    margin-bottom: 12px;
+    
+    .fontGroupName {
+        @include untitled-text-text-md-medium;
+        color: var(--untitled-gray--700);
+    }
+
+    .fontGroupValue {
+        @include untitled-text-text-sm-normal;
+        color: var(--untitled-gray--500);
+    }
+}
+
+.fontShowcase {
+    display: flex;
+    gap: 64px;
+    flex-wrap: wrap;
+    
+    .fontShowcaseItem {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    &[data-name="Display 2xl"] {
+        @include untitled-text-display-2-xl-regular;
+        
+        .medium {
+            @include untitled-text-display-2-xl-medium;
+        }
+
+        .semibold {
+            @include untitled-text-display-2-xl-semibold;
+        }
+        
+        .bold {
+            @include untitled-text-display-2-xl-bold;
+        }
+    }
+
+    &[data-name="Display xl"] {
+        @include untitled-text-display-xl-normal;
+
+        .medium {
+            @include untitled-text-display-xl-medium;
+        }
+
+        .semibold {
+            @include untitled-text-display-xl-semibold;
+        }
+
+        .bold {
+            @include untitled-text-display-xl-bold;
+        }
+    }
+
+    &[data-name="Display lg"] {
+        @include untitled-text-display-lg-normal;
+
+        .medium {
+            @include untitled-text-display-lg-medium;
+        }
+
+        .semibold {
+            @include untitled-text-display-lg-semibold;
+        }
+
+        .bold {
+            @include untitled-text-display-lg-bold;
+        }
+    }
+
+    &[data-name="Display md"] {
+        @include untitled-text-display-md-normal;
+
+        .medium {
+            @include untitled-text-display-md-medium;
+        }
+
+        .semibold {
+            @include untitled-text-display-md-semibold;
+        }
+
+        .bold {
+            @include untitled-text-display-md-bold;
+        }
+    }
+
+    &[data-name="Display sm"] {
+        @include untitled-text-display-sm-normal;
+
+        .medium {
+            @include untitled-text-display-sm-medium;
+        }
+
+        .semibold {
+            @include untitled-text-display-sm-semibold;
+        }
+
+        .bold {
+            @include untitled-text-display-sm-bold;
+        }
+    }
+
+    &[data-name="Display xs"] {
+        @include untitled-text-display-xs-normal;
+
+        .medium {
+            @include untitled-text-display-xs-medium;
+        }
+
+        .semibold {
+            @include untitled-text-display-xs-semibold;
+        }
+
+        .bold {
+            @include untitled-text-display-xs-bold;
+        }
+    }
+
+    &[data-name="Text xl"] {
+        @include untitled-text-text-xl-normal;
+
+        .medium {
+            @include untitled-text-text-xl-medium;
+        }
+
+        .semibold {
+            @include untitled-text-text-xl-semibold;
+        }
+
+        .bold {
+            @include untitled-text-text-xl-bold;
+        }
+    }
+
+    &[data-name="Text lg"] {
+        @include untitled-text-text-lg-normal;
+
+        .medium {
+            @include untitled-text-text-lg-medium;
+        }
+
+        .semibold {
+            @include untitled-text-text-lg-semibold;
+        }
+
+        .bold {
+            @include untitled-text-text-lg-bold;
+        }
+    }
+
+    &[data-name="Text md"] {
+        @include untitled-text-text-md-normal;
+
+        .medium {
+            @include untitled-text-text-md-medium;
+        }
+
+        .semibold {
+            @include untitled-text-text-md-semibold;
+        }
+
+        .bold {
+            @include untitled-text-text-md-bold;
+        }
+    }
+
+    &[data-name="Text sm"] {
+        @include untitled-text-text-sm-normal;
+
+        .medium {
+            @include untitled-text-text-sm-medium;
+        }
+
+        .semibold {
+            @include untitled-text-text-sm-semibold;
+        }
+
+        .bold {
+            @include untitled-text-text-sm-bold;
+        }
+    }
+
+    &[data-name="Text xs"] {
+        @include untitled-text-text-xs-normal;
+
+        .medium {
+            @include untitled-text-text-xs-medium;
+        }
+
+        .semibold {
+            @include untitled-text-text-xs-semibold;
+        }
+
+        .bold {
+            @include untitled-text-text-xs-bold;
+        }
+    }
+    
+}

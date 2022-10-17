@@ -57,3 +57,11 @@ body {
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
+
+code {
+    padding: 0.1rem 0.4rem;
+    background-color: var(--untitled-blue-gray--50);
+    border-radius: 0.1785rem;
+    font-size: 90%;
+    color: var(--untitled-primary--700);
+}
