@@ -5,7 +5,7 @@ import {
     ComponentsContainer, ComponentsParagraph,
     ComponentsShowcase,
     ComponentsTitle
-} from "@feats/library/components/components-grid/components-container";
+} from "@feats/library/components/components-container/components-container";
 import { PhoneTextField, Textfield } from "react-untitled-ui";
 import { Mail, Search } from "react-feather";
 

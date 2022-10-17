@@ -5,7 +5,7 @@ import {
     ComponentsContainer, ComponentsParagraph,
     ComponentsShowcase,
     ComponentsTitle
-} from "@feats/library/components/components-grid/components-container";
+} from "@feats/library/components/components-container/components-container";
 import { Dropdown } from "react-untitled-ui";
 import { User } from "react-feather";
 

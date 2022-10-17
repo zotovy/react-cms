@@ -5,7 +5,7 @@ import {
     ComponentsContainer, ComponentsParagraph,
     ComponentsShowcase,
     ComponentsTitle
-} from "@feats/library/components/components-grid/components-container";
+} from "@feats/library/components/components-container/components-container";
 import { Avatar } from "react-untitled-ui";
 
 export type AvatarsProps = {}

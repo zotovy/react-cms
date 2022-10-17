@@ -6,7 +6,7 @@ import {
     ComponentsParagraph,
     ComponentsShowcase,
     ComponentsTitle
-} from "@feats/library/components/components-grid/components-container";
+} from "@feats/library/components/components-container/components-container";
 import { Button, ButtonGroup } from "react-untitled-ui";
 
 export const ButtonGroups: React.FC = () => {

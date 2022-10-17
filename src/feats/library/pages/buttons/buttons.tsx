@@ -5,7 +5,7 @@ import { PreviewHeader } from "@core/components/sections/headers/preview/preview
 import {
     ComponentsContainer, ComponentsParagraph,
     ComponentsTitle, ComponentsShowcase
-} from "@feats/library/components/components-grid/components-container";
+} from "@feats/library/components/components-container/components-container";
 import { Button } from "react-untitled-ui";
 import { User } from "react-feather";
 

@@ -6,12 +6,21 @@ import { PreviewHeader } from "@core/components/sections/headers/preview/preview
 
 export const IndexLibrary: React.FC = () => {
     return <Layout>
-        <PreviewHeader 
+        <PreviewHeader
             badge="UI Library"
             title="Component library"
             subtitle="Buttons, inputs, avatars — all of the base components you need for modern dashboard design"/>
-        
+
         <div className={ styles.indexPage }>
+
+            <Card
+                title="Color styles"
+                link="/apps/components/color-styles"
+                image="/images/previews/color-styles.png"
+                description="333 styles"/>
+            
+            <div className={ styles.divider }></div>
+
             <Card
                 title="Buttons"
                 link="/apps/components/buttons"
