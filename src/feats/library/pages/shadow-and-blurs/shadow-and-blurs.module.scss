@@ -1,0 +1,75 @@
+@import "react-untitled-ui/src/styles/global";
+
+.shadowCard {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include untitled-text-text-md-medium;
+    color: var(--untitled-gray--500);
+
+    &[data-name=xs] {
+        @include untitled-effect-shadow-xs;
+    }
+
+    &[data-name=sm] {
+        @include untitled-effect-shadow-sm;
+    }
+
+    &[data-name=md] {
+        @include untitled-effect-shadow-md;
+    }
+
+    &[data-name=lg] {
+        @include untitled-effect-shadow-lg;
+    }
+
+    &[data-name=xl] {
+        @include untitled-effect-shadow-xl;
+    }
+
+    &[data-name="2xl"] {
+        @include untitled-effect-shadow-2-xl;
+    }
+
+    &[data-name="3xl"] {
+        @include untitled-effect-shadow-3-xl;
+    }
+}
+
+.blurBg {
+    border-radius: 8px;
+    padding: 30px;
+    background: url("https://images.unsplash.com/photo-1535242208474-9a2793260ca8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3024&q=80") no-repeat center;
+    background-size: cover;
+    justify-content: space-around;
+}
+
+.blurCard {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include untitled-text-text-md-medium;
+    color: white;
+
+    &[data-name=sm] {
+        @include untitled-effect-background-blur-sm;
+    }
+
+    &[data-name=md] {
+        @include untitled-effect-background-blur-md;
+    }
+
+    &[data-name=lg] {
+        @include untitled-effect-background-blur-lg;
+    }
+
+    &[data-name=xl] {
+        @include untitled-effect-background-blur-xl;
+    }
+}

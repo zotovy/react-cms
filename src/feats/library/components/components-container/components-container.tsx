@@ -1,8 +1,10 @@
 import React from "react";
 import styles from "./components-grid.module.scss";
+import classNames from "classnames";
 
 export type ComponentsGridProps = {
     children?: React.ReactNode;
+    className?: string;
 }
 
 export const ComponentsContainer: React.FC<ComponentsGridProps> = (props) => {
@@ -24,7 +26,7 @@ export const ComponentsParagraph: React.FC<ComponentsGridProps> = (props) => {
 }
 
 export const ComponentsShowcase: React.FC<ComponentsGridProps> = (props) => {
-    return <div className={ styles.componentsShowcase }>
+    return <div className={ classNames(styles.componentsShowcase, props.className) }>
         { props.children }
     </div>
 }

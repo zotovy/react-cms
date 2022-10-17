@@ -10,6 +10,7 @@ import { Checkboxes } from "@feats/library/pages/checkboxes/checkboxes";
 import { Avatars } from "@feats/library/pages/avatars/avatars";
 import { ColorStyles } from "@feats/library/pages/color-styles/color-styles";
 import { Typography } from "@feats/library/pages/typography/typography";
+import { ShadowAndBlurs } from "@feats/library/pages/shadow-and-blurs/shadow-and-blurs";
 
 export const libraryRoutes: Route[] = [
     {
@@ -55,5 +56,9 @@ export const libraryRoutes: Route[] = [
     {
         path: "/apps/components/typography",
         page: <Typography/>
+    },
+    {
+        path: "/apps/components/shadow-and-blurs",
+        page: <ShadowAndBlurs/>
     },
 ]
