@@ -143,7 +143,9 @@ export const PersonalInfo: React.FC<PersonalInfoProps> = () => {
                     <Divider/>
 
                     {/* Actions */ }
-                    <FormActions/>
+                    <Field>
+                        <FormActions/>
+                    </Field>
                 </PageContainer>
             </div>
         </Form>
