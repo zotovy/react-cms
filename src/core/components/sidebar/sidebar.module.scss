@@ -94,7 +94,6 @@ $sizedBarOpenWidth: 280px;
                     transition: 0.15s;
                     cursor: pointer;
                     position: relative;
-                    outline: none;
 
                     svg {
                         width: 24px;
@@ -120,7 +119,7 @@ $sizedBarOpenWidth: 280px;
                     .arrow {
                         display: flex;
                         justify-content: end;
-                        margin-left: auto;
+                        width: 100%;
 
                         svg {
                             width: 22px;
@@ -207,25 +206,19 @@ $sizedBarOpenWidth: 280px;
                 .userDetails {
                     color: var(--untitled-gray--600);
                     font-size: 14px;
-                    width: 100%;
-                    max-width: 150px;
 
                     .userName {
-                        font-size: 14px;
                         font-weight: 500;
-                        overflow: hidden;
-                        white-space: nowrap;
-                        text-overflow: ellipsis;
                     }
                 }
 
                 .logoutButton {
+                    width: 100%;
                     height: 100%;
                     display: flex;
                     justify-content: end;
                     align-items: start;
-                    margin-left: auto;
-
+                    
                     svg {
                         width: 20px;
                         height: 20px;
@@ -253,18 +246,14 @@ $sizedBarOpenWidth: 280px;
             align-items: center;
             min-width: 182px;
             pointer-events: none;
-
-            &[data-type=user] {
-                max-width: 150px;
-            }
         }
-
+        
         @include lt-md {
             position: absolute;
             max-width: $sizedBarOpenWidth;
             transition: transform 0.5s;
 
-            &:not(&[data-mobileOpen=true]) {
+            &:not(&[data-open=true]) {
                 transform: translateX(-$sizedBarOpenWidth);
             }
         }
@@ -292,7 +281,7 @@ $sizedBarOpenWidth: 280px;
         pointer-events: none;
 
         @include lt-md {
-            &[data-mobileOpen=true] {
+            &[data-open=true] {
                 opacity: 1;
                 pointer-events: initial;
             }

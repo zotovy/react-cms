@@ -80,6 +80,12 @@ export const IndexLibrary: React.FC = () => {
                 link="/apps/components/avatars"
                 image="/images/previews/avatars.png"
                 description="280 components + 98 variants"/>
+            
+            <Card
+                title="Modals"
+                link="/apps/components/modals"
+                image="/images/previews/modals.png"
+                description="2 components + 78 variants"/>
         </div>
     </Layout>
 }

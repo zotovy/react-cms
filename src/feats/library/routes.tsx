@@ -11,6 +11,7 @@ import { Avatars } from "@feats/library/pages/avatars/avatars";
 import { ColorStyles } from "@feats/library/pages/color-styles/color-styles";
 import { Typography } from "@feats/library/pages/typography/typography";
 import { ShadowAndBlurs } from "@feats/library/pages/shadow-and-blurs/shadow-and-blurs";
+import { Modals } from "@feats/library/pages/modals/modals";
 
 export const libraryRoutes: Route[] = [
     {
@@ -60,5 +61,9 @@ export const libraryRoutes: Route[] = [
     {
         path: "/apps/components/shadow-and-blurs",
         page: <ShadowAndBlurs/>
+    },
+    {
+        path: "/apps/components/modals",
+        page: <Modals/>
     },
 ]

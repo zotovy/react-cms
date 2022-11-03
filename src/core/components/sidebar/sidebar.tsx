@@ -16,7 +16,6 @@ import { Avatar, Badge } from "react-untitled-ui";
 import { Link } from "react-router-dom";
 import { fullName } from "@feats/auth/entities";
 
-// TODO: unit testing
 export const Sidebar: React.FC<SidebarConfig> = React.memo((props) => {
     const {isSidebarOpened: open, toggleSidebar: toggle, user, handleLogout, mobileOpen, toggleMainSidebar} = useSidebar()
     const containerRef = useRef<HTMLDivElement>(null)
@@ -39,7 +38,7 @@ export const Sidebar: React.FC<SidebarConfig> = React.memo((props) => {
                     <Logo/>
                     <div className={ styles.disposable }>
                         <h5 className={ styles.company }>
-                            Lumi
+                            Untitled CMS
                         </h5>
                     </div>
                 </div>
