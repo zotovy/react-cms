@@ -82,6 +82,12 @@ export const IndexLibrary: React.FC = () => {
                 description="280 components + 98 variants"/>
             
             <Card
+                title="Progress bars"
+                link="/apps/components/progress-bars"
+                image="/images/previews/progress-bars.png"
+                description="2 components + 75 variants"/>
+            
+            <Card
                 title="Modals"
                 link="/apps/components/modals"
                 image="/images/previews/modals.png"

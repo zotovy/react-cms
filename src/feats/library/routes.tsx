@@ -12,6 +12,7 @@ import { ColorStyles } from "@feats/library/pages/color-styles/color-styles";
 import { Typography } from "@feats/library/pages/typography/typography";
 import { ShadowAndBlurs } from "@feats/library/pages/shadow-and-blurs/shadow-and-blurs";
 import { Modals } from "@feats/library/pages/modals/modals";
+import { ProgressBars } from "@feats/library/pages/progress-bars/progress-bars";
 
 export const libraryRoutes: Route[] = [
     {
@@ -65,5 +66,8 @@ export const libraryRoutes: Route[] = [
     {
         path: "/apps/components/modals",
         page: <Modals/>
+    },{
+        path: "/apps/components/progress-bars",
+        page: <ProgressBars/>
     },
 ]
