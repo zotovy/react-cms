@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./sidebar.module.scss";
 import {
     ContainerNavPage,
@@ -11,22 +11,35 @@ import {
 } from "@core/types/layout";
 import { useSidebar, useSidebarItem } from "@core/hooks/use-sidebar";
 import { Logo } from "@core/components/logo/logo";
-import { ChevronDown, LogOut, Settings } from "react-feather";
+import { ChevronDown, LogOut } from "react-feather";
 import { Avatar, Badge } from "react-untitled-ui";
 import { Link } from "react-router-dom";
 import { fullName } from "@feats/auth/entities";
 
+// TODO: unit testing
 export const Sidebar: React.FC<SidebarConfig> = React.memo((props) => {
-    const {isSidebarOpened: open, toggleSidebar: toggle, user, handleLogout} = useSidebar()
+    const {isSidebarOpened: open, toggleSidebar: toggle, user, handleLogout, mobileOpen, toggleMainSidebar} = useSidebar()
+    const containerRef = useRef<HTMLDivElement>(null)
 
-    return <div className={ styles.sidebar } data-open={ open }>
-        <div className={ styles.container } data-open={ open }>
-            <div className={ styles.nav } data-open={ open }>
+    useEffect(() => {
+        const handleResize = () => {
+            if (containerRef.current) {
+                containerRef.current!.style.height = `${ window.innerHeight }px`
+            }
+        }
+        handleResize();
+        window.addEventListener("resize", handleResize)
+        return () => window.removeEventListener("resize", handleResize)
+    }, [])
+
+    return <div className={ styles.sidebar } data-open={ open } data-mobileOpen={ mobileOpen }>
+        <div className={ styles.container } data-open={ open } data-mobileOpen={ mobileOpen } ref={ containerRef }>
+            <div className={ styles.nav } data-open={ open } data-mobileOpen={ mobileOpen }>
                 <div className={ styles.header }>
                     <Logo/>
                     <div className={ styles.disposable }>
                         <h5 className={ styles.company }>
-                            Untitled CMS
+                            Lumi
                         </h5>
                     </div>
                 </div>
@@ -41,20 +54,14 @@ export const Sidebar: React.FC<SidebarConfig> = React.memo((props) => {
             </div>
             <div className={ styles.footer }>
                 <div className={ styles.navigation }>
-                    <SidebarItem
-                        icon={ <Settings/> }
-                        type="page"
-                        text="Settings"
-                        url="/apps/users/settings"
-                        key="settings-nav-item"
-                        itemKey="settings-nav-item"/>
-                    <SidebarDivider/>
                     <div className={ styles.user }>
-                        <Avatar onClick={ toggle } className={ styles.avatar } src={ user?.profileImage ?? undefined }/>
-                        <div className={ styles.disposable }>
+                        <Avatar onClick={ toggleMainSidebar } className={ styles.avatar }/>
+                        <div className={ styles.disposable } data-type="user">
                             <div className={ styles.userDetails }>
                                 <h5 className={ styles.userName }>{ fullName(user) }</h5>
-                                <span className={ styles.userEmail }>{ user?.email ?? "" }</span>
+                                <span className={ styles.userEmail }>
+                                    { user?.username ? `@${ user?.username }` : "" }
+                                </span>
                             </div>
                             <div className={ styles.logoutButton }>
                                 <LogOut onClick={ handleLogout }/>
@@ -64,7 +71,7 @@ export const Sidebar: React.FC<SidebarConfig> = React.memo((props) => {
                 </div>
             </div>
         </div>
-        <div className={ styles.sidebarOverlay } data-open={ open } onClick={ toggle }/>
+        <div className={ styles.sidebarOverlay } data-open={ open } data-mobileOpen={ mobileOpen } onClick={ toggle }/>
     </div>
 })
 
@@ -80,12 +87,14 @@ export const SidebarItem: React.FC<(NavPage | ContainerNavPage) & { itemKey: str
         activeChildren,
         handleItemClick,
     } = useSidebarItem(props as ContainerNavPage, props.itemKey)
-    
+
     const Container = isNavPage(props) ? Link : "div"
 
     return <div className={ styles.navItemContainer }>
         <Container
             { ...getToggleProps() }
+            // @ts-ignore
+            type="link"
             to={ isNavPage(props) ? props.url : "#" }
             className={ styles.navItem }
             data-open={ open }
