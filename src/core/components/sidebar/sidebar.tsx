@@ -35,7 +35,12 @@ export const Sidebar: React.FC<SidebarConfig> = React.memo((props) => {
         <div className={ styles.container } data-open={ open } data-mobileOpen={ mobileOpen } ref={ containerRef }>
             <div className={ styles.nav } data-open={ open } data-mobileOpen={ mobileOpen }>
                 <div className={ styles.header }>
-                    <Logo text/>
+                    <Logo/>
+                    <div className={ styles.disposable }>
+                        <h5 className={ styles.company }>
+                            Samble
+                        </h5>
+                    </div>
                 </div>
                 <div className={ styles.navigation }>
                     {
