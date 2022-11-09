@@ -213,7 +213,8 @@ $sizedBarOpenWidth: 280px;
                 }
 
                 .logoutButton {
-                    width: 100%;
+                    flex: 0 auto;
+                    margin-left: auto;
                     height: 100%;
                     display: flex;
                     justify-content: end;
