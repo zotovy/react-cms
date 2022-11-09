@@ -1,11 +1,12 @@
+@import "react-untitled-ui/src/styles/mixins";
+
 .logo {
     display: inline-flex;
     align-items: center;
+    gap: 10px;
     
     .text {
-        margin-left: 9.83px;
-        min-width: 101px;
-        height: 17px;
-        color: var(--untitled-gray-900);
+       @include untitled-text-text-xl-semibold;
+        color: var(--untitled-gray--900);
     }
 }
