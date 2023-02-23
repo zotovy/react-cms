@@ -4,6 +4,7 @@ import { authRoutes } from "@feats/auth/routes";
 import AuthService from "@feats/auth/auth-service";
 import { Route } from "./router";
 import { libraryRoutes } from "@feats/library/routes";
+import { dashboardRoutes } from "@feats/dashboard/routes";
 
 export const routes: Route[] = [
     {
@@ -13,6 +14,7 @@ export const routes: Route[] = [
     ...authRoutes,
     ...usersRoutes,
     ...libraryRoutes,
+    ...dashboardRoutes,
 ]
 
 export function getHomeRoute(): string {

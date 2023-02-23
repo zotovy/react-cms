@@ -1,10 +1,22 @@
 import { SidebarConfig } from "@core/types/layout";
-import { Dribbble, User, Users } from "react-feather";
+import { Dribbble, Layers, User, Users } from "react-feather";
 import React from "react";
 import { v4 } from "uuid";
 
 export const sidebarConfig: SidebarConfig = {
     items: [
+        {
+            type: "page",
+            icon: <Layers/>,
+            text: "Dashboard",
+            key: v4(),
+            children: [
+                {
+                    text: "Dashboard 1",
+                    url: "/apps/dashboard/1",
+                }
+            ]
+        },
         {
             type: "page",
             icon: <User/>,
