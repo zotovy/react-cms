@@ -6,7 +6,8 @@ import { useSelector } from "react-redux";
 import { selectUser } from "@feats/auth/redux/auth/auth-selectors";
 import { Button } from "react-untitled-ui";
 import { Plus, UploadCloud } from "react-feather";
-import { MetricItem1, MetricItem2, MetricItem3 } from "@feats/dashboard/pages/dashboard-1/components";
+import { Header, MetricItem1, MetricItem2, MetricItem3 } from "@feats/dashboard/pages/dashboard-1/components";
+import { DashboardMap } from "@feats/dashboard/pages/dashboard-1/components/geo-map/geo-map";
 
 export const Dashboard1: React.FC = () => {
     const user = useSelector(selectUser)
@@ -23,11 +24,13 @@ export const Dashboard1: React.FC = () => {
                 </Button>
                 <Button trailingIcon={Plus}>Add</Button>
             </DefaultHeader>
+            <Header/>
             <div className={styles.metrics}>
                 <MetricItem1/>
                 <MetricItem2/>
                 <MetricItem3/>
             </div>
+            <DashboardMap/>
         </Layout>
     </div>
 }

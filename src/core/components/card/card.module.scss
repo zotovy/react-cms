@@ -1,0 +1,15 @@
+@import "react-untitled-ui/src/styles/mixins";
+
+.card {
+    display: inline-flex;
+    flex-direction: column;
+    padding: 24px;
+    gap: 24px;
+    @include untitled-effect-shadow-sm;
+    border-radius: 8px;
+    
+    h2 {
+        @include untitled-text-text-lg-semibold;
+        color: var(--untitled-gray--900);
+    }
+}

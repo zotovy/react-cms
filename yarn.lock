@@ -8859,6 +8859,11 @@ react-focus-lock@^2.9.1:
     use-callback-ref "^1.3.0"
     use-sidecar "^1.1.2"
 
+react-google-charts@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/react-google-charts/-/react-google-charts-4.0.0.tgz#f648e4fe8ac8a1f47542c2cac040df6afb21e2d6"
+  integrity sha512-9OG0EkBb9JerKEPQYdhmAXnhGLzOdOHOPS9j7l+P1a3z1kcmq9mGDa7PUoX/VQUY4IjZl2/81nsO4o+1cuYsuw==
+
 react-imask@^6.4.2:
   version "6.4.2"
   resolved "https://registry.yarnpkg.com/react-imask/-/react-imask-6.4.2.tgz#0bd1a4c6cc8838abfbbc340eab9f311831a57c37"
@@ -9057,10 +9062,10 @@ react-transition-group@2.9.0:
     prop-types "^15.6.2"
     react-lifecycles-compat "^3.0.4"
 
-react-untitled-ui@^0.0.69:
-  version "0.0.69"
-  resolved "https://registry.yarnpkg.com/react-untitled-ui/-/react-untitled-ui-0.0.69.tgz#56f042d13b3e8d70da63eb6691101f9d6b41f646"
-  integrity sha512-tAA+49yKYu0ihdX3KWHEpvSka5LIFl5+kqC3Ms1TEbUIzVvi0jGNhNlhvEzeOuzAA4jrkeD/OJT5PwKV675jmg==
+react-untitled-ui@^0.0.74:
+  version "0.0.74"
+  resolved "https://registry.yarnpkg.com/react-untitled-ui/-/react-untitled-ui-0.0.74.tgz#55d7c5e3eab09dc2346363fbd53f79a56a6b1d53"
+  integrity sha512-rr+sG2IVBiwSQgBgpV0qqRMMc/7XkqmHCcDQ+VGXJJ7/SywcyJ1DE20lG0DD97BdP8vTXhucmbMQ7qEihBo7rg==
   dependencies:
     "@react-hook/resize-observer" "^1.2.6"
     classnames "^2.3.1"

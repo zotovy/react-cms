@@ -31,3 +31,17 @@ export const theme = extendTheme({
         }
     }
 })
+
+export const primaryColors =[
+    "#FCFAFF",
+    "#F9F5FF",
+    "#F4EBFF",
+    "#E9D7FE",
+    "#D6BBFB",
+    "#B692F6",
+    "#9E77ED",
+    "#7F56D9",
+    "#6941C6",
+    "#53389E",
+    "#42307D",
+]
