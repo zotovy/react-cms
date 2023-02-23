@@ -54,18 +54,18 @@
     display: inline-flex;
     gap: 8px;
     color: var(--untitled-gray--500);
+}
 
-    span {
-        color: var(--untitled-success--500);
-        @include untitled-text-text-sm-medium;
-        display: inline-flex;
-        align-items: center;
+.change {
+    color: var(--untitled-success--500);
+    @include untitled-text-text-sm-medium;
+    display: inline-flex;
+    align-items: center;
 
-        svg {
-            margin-right: 4px;
-            width: 20px;
-            height: 20px;
-            display: inline-block;
-        }
+    svg {
+        margin-right: 4px;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
     }
 }

@@ -4,7 +4,8 @@ import { ArrowUp, MoreVertical } from "react-feather";
 import { MetricItemText } from "@feats/dashboard/components/metric-item/metric-item-text";
 import { MetricItemValue } from "@feats/dashboard/components/metric-item/metric-item-value";
 import { MetricItemChangeAndText } from "@feats/dashboard/components/metric-item/metric-item-change-and-text";
-import { Area, AreaChart, CartesianGrid, LineGradient } from "react-untitled-ui";
+import { Area, AreaChart, CartesianGrid } from "react-untitled-ui";
+import { MetricItemChange } from "@feats/dashboard/components/metric-item/metric-item-change";
 
 const data = [
     { 
@@ -38,10 +39,10 @@ export const MetricItem1: React.FC = () => {
             <MetricItemText>
                 <MetricItemValue>2,000</MetricItemValue>
                 <MetricItemChangeAndText>
-                        <span>
+                        <MetricItemChange>
                             <ArrowUp/>
                             100%
-                        </span>
+                        </MetricItemChange>
                     vs last month
                 </MetricItemChangeAndText>
             </MetricItemText>

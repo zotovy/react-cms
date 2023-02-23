@@ -1,10 +1,11 @@
 import React, { FC, memo } from "react";
 import { MetricItem, MetricItemContent, MetricItemTitle } from "@feats/dashboard/components";
-import { ArrowDown, ArrowUp, MoreVertical } from "react-feather";
+import { ArrowDown, MoreVertical } from "react-feather";
 import { MetricItemText } from "@feats/dashboard/components/metric-item/metric-item-text";
 import { MetricItemValue } from "@feats/dashboard/components/metric-item/metric-item-value";
 import { MetricItemChangeAndText } from "@feats/dashboard/components/metric-item/metric-item-change-and-text";
 import { Area, AreaChart, CartesianGrid } from "react-untitled-ui";
+import { MetricItemChange } from "@feats/dashboard/components/metric-item/metric-item-change";
 
 export type MetricItem2Props = {
     
@@ -38,10 +39,10 @@ export const MetricItem2: FC<MetricItem2Props> = memo(() => {
             <MetricItemText>
                 <MetricItemValue>26.4k</MetricItemValue>
                 <MetricItemChangeAndText>
-                        <span>
+                        <MetricItemChange color="var(--untitled-error--500)">
                             <ArrowDown/>
                             2%
-                        </span>
+                        </MetricItemChange>
                     vs last month
                 </MetricItemChangeAndText>
             </MetricItemText>

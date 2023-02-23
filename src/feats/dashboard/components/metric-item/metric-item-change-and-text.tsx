@@ -6,7 +6,7 @@ export type MetricItemChangeAndTextProps = {
 }
 
 export const MetricItemChangeAndText: React.FC<MetricItemChangeAndTextProps> = (props) => {
-    return <div className={ styles.changeAndText }>
+    return <div className={ styles.changeAndText } >
         { props.children }
     </div>
 }
