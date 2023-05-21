@@ -5,8 +5,9 @@
     flex-direction: column;
     padding: 24px;
     gap: 24px;
-    @include untitled-effect-shadow-sm;
+    //@include untitled-effect-shadow-sm;
     border-radius: 8px;
+    border: 1px solid #EAECF0;
     
     h2 {
         @include untitled-text-text-lg-semibold;
