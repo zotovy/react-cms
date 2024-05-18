@@ -1,0 +1,8 @@
+:root body {
+    --background-color: white;
+}
+
+:root[data-theme='dark'] {
+    --background-color: black;
+}
+
